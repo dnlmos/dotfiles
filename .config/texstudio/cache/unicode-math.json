@@ -1,0 +1,23 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+    ],
+    "filename": "/usr/local/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math.sty",
+    "labels": [
+    ],
+    "modified": "Thu Jan 30 23:21:18 2020",
+    "packages": [
+        "#expl3",
+        "#unicode-math-luatex",
+        "#unicode-math-xetex"
+    ],
+    "refs": [
+    ],
+    "toc": [
+    ],
+    "usercommands": [
+    ]
+}

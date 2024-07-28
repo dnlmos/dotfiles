@@ -1,0 +1,78 @@
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+
+[language-server.ruff-lsp.config]
+documentFormatting = true 
+settings.run = "onSave"
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.pyright.config]
+python.analysis.venvPath = "."
+python.analysis.venv = ".venv"
+python.analysis.lint = true
+python.analysis.inlayHint.enable = true
+python.analysis.autoSearchPaths = true
+python.analysis.diagnosticMode = "workspace"
+python.analysis.useLibraryCodeForType = true
+python.analysis.logLevel = "Error"
+python.analysis.typeCheckingMode = "off"
+python.analysis.autoImoprtCompletion = true
+python.analysis.reportOptionalSubscript = false
+python.analysis.reportOptionalMemberAccess = false
+
+[[language]]
+name = "python"
+auto-format = false
+language-servers = [
+  { name = "ruff-lsp" },
+  { name = "pyright", except-features = [ "diagnostics" ] },
+]
+formatter =  { command = "bash", args = ["-c", "black -q -"] }
+
+# [language-server.pyright.config]
+# python.analysis.venvPath = "."
+# python.analysis.venv = ".venv"
+# python.analysis.lint = true
+# python.analysis.inlayHint.enable = true
+# python.analysis.autoSearchPaths = true
+# python.analysis.diagnosticMode = "workspace"
+# python.analysis.useLibraryCodeForType = true
+# python.analysis.logLevel = "Error"
+# python.analysis.typeCheckingMode = "off"
+# python.analysis.autoImoprtCompletion = true
+# python.analysis.reportOptionalSubscript = false
+# python.analysis.reportOptionalMemberAccess = false
+
+# [language-server.pylsp.config.pylsp]
+# plugins.black.enabled = true
+# plugins.pylint.enabled = false
+# plugins.pyflakes.enabled = false
+# plugins.pyls_mypy.enabled = true
+# plugins.pyls_mypy.live_mode = false
+# plugins.isort.enabled = false
+# plugins.rope_autoimport.enabled = true
+
+# [language-server.pyright]
+# command = "pyright-langserver"
+# args = ["--stdio"]
+
+# [language-server.pyright.config]
+# python.analysis.venvPath = "."
+# python.analysis.venv = ".venv"
+# python.analysis.lint = true
+# python.analysis.inlayHint.enable = true
+# python.analysis.autoSearchPaths = true
+# python.analysis.diagnosticMode = "workspace"
+# python.analysis.useLibraryCodeForType = true
+# python.analysis.logLevel = "Error"
+# python.analysis.typeCheckingMode = "off"
+# python.analysis.autoImoprtCompletion = true
+# python.analysis.reportOptionalSubscript = false
+# python.analysis.reportOptionalMemberAccess = false
+
