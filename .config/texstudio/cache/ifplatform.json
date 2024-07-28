@@ -1,0 +1,58 @@
+{
+    "bibitems": [
+    ],
+    "bibtexfiles": [
+    ],
+    "childdocs": [
+    ],
+    "filename": "/usr/local/texlive/2023/texmf-dist/tex/latex/ifplatform/ifplatform.sty",
+    "labels": [
+    ],
+    "modified": "Fri Oct 13 23:40:26 2017",
+    "packages": [
+        "#ifluatex",
+        "#catchfile",
+        "#pdftexcmds",
+        "#shellesc"
+    ],
+    "refs": [
+    ],
+    "toc": [
+    ],
+    "usercommands": [
+        "\\notwindowsname",
+        "\\unknownplatform",
+        "\\expandafter",
+        "\\macosxtrue",
+        "\\macosxfalse",
+        "\\ifmacosx",
+        "\\cygwintrue",
+        "\\cygwinfalse",
+        "\\ifcygwin",
+        "\\ip",
+        "\\windowsname",
+        "\\ip",
+        "\\macosxname",
+        "\\expandafter",
+        "\\unknownplatform",
+        "\\shellescapetrue",
+        "\\shellescapefalse",
+        "\\ifshellescape",
+        "\\@@tempa",
+        "\\linuxname",
+        "\\windowstrue",
+        "\\windowsfalse",
+        "\\ifwindows",
+        "\\ip",
+        "\\linuxtrue",
+        "\\linuxfalse",
+        "\\iflinux",
+        "\\@ip@nix@true",
+        "\\@ip@nix@false",
+        "\\if@ip@nix@",
+        "\\platformname",
+        "\\cygwinname",
+        "\\ip",
+        "\\ip"
+    ]
+}

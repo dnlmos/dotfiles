@@ -1,0 +1,29 @@
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"App","operation":"open"}
+{"signed_in":false,"milliseconds_since_first_event":24,"type":"Setting","setting":"theme","value":"One Dark"}
+{"signed_in":false,"milliseconds_since_first_event":24,"type":"Setting","setting":"keymap","value":"VSCode"}
+{"signed_in":false,"milliseconds_since_first_event":0,"type":"Extension","extension_id":"html","version":"0.0.1"}
+{"signed_in":false,"milliseconds_since_first_event":238,"type":"Editor","operation":"open","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":238,"type":"Editor","operation":"open","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":1507,"type":"Extension","extension_id":"html","version":"0.1.1"}
+{"signed_in":false,"milliseconds_since_first_event":16593,"type":"Editor","operation":"save","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":20667,"type":"App","operation":"extensions page: open"}
+{"signed_in":false,"milliseconds_since_first_event":27043,"type":"App","operation":"extensions: install extension"}
+{"signed_in":false,"milliseconds_since_first_event":27677,"type":"Extension","extension_id":"macos-classic","version":"0.0.8"}
+{"signed_in":false,"milliseconds_since_first_event":33924,"type":"Action","source":"command palette","action":"theme selector: toggle"}
+{"signed_in":false,"milliseconds_since_first_event":52983,"type":"App","operation":"extensions: uninstall extension"}
+{"signed_in":false,"milliseconds_since_first_event":97184,"type":"App","operation":"extensions: install extension"}
+{"signed_in":false,"milliseconds_since_first_event":98176,"type":"Extension","extension_id":"catppuccin","version":"0.2.7"}
+{"signed_in":false,"milliseconds_since_first_event":101978,"type":"Action","source":"command palette","action":"theme selector: toggle"}
+{"signed_in":false,"milliseconds_since_first_event":121768,"type":"Setting","setting":"theme","value":"Catppuccin Macchiato"}
+{"signed_in":false,"milliseconds_since_first_event":131538,"type":"Edit","duration":1585,"environment":"editor"}
+{"signed_in":false,"milliseconds_since_first_event":134982,"type":"Editor","operation":"save","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":151837,"type":"Editor","operation":"open","file_extension":"json","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":157595,"type":"Editor","operation":"open","file_extension":null,"vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":170211,"type":"Action","source":"command palette","action":"theme selector: toggle"}
+{"signed_in":false,"milliseconds_since_first_event":199092,"type":"Setting","setting":"theme","value":"Catppuccin Macchiato - No Italics"}
+{"signed_in":false,"milliseconds_since_first_event":206846,"type":"Edit","duration":2484,"environment":"editor"}
+{"signed_in":false,"milliseconds_since_first_event":207304,"type":"Editor","operation":"save","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":234800,"type":"Editor","operation":"save","file_extension":"py","vim_mode":false,"copilot_enabled":true,"copilot_enabled_for_language":true}
+{"signed_in":false,"milliseconds_since_first_event":239975,"type":"Memory","memory_in_bytes":172425216,"virtual_memory_in_bytes":440631738368}
+{"signed_in":false,"milliseconds_since_first_event":239975,"type":"Cpu","usage_as_percentage":0.0,"core_count":8}
+{"signed_in":false,"milliseconds_since_first_event":288330,"type":"Action","source":"command palette","action":"theme selector: toggle"}

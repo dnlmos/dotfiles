@@ -1,0 +1,3 @@
+# ~/.config/helix/themes/cattpuccin_mocha_transparent.toml
+inherits = "catppuccin_mocha"
+"ui.background" = {}

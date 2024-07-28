@@ -1,0 +1,65 @@
+theme = "catppuccin_mocha_transparent"
+
+[editor.lsp]
+display-inlay-hints = true
+# Show LSP messages in the status line
+display-messages = true
+
+[editor]
+line-number = "relative"
+rulers = [88]
+color-modes=true
+# end-of-line-diagnostics = "hint"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+'<' = '>'
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+right = ["version-control", "diagnostics", "selections", "position", "file-encoding", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal]
+A-left = "move_prev_word_start"
+A-right = "move_next_word_end"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-A-left = "extend_prev_word_start"
+S-A-right = "extend_next_word_start"
+C-s = ":w!"
+C-v = [":clipboard-paste-before"]
+# Use system clipboard
+y = "yank_main_selection_to_clipboard"
+p = "paste_clipboard_before"
+
+[keys.insert]
+A-left = "move_prev_word_start"
+A-right = "move_next_word_end"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-A-left = "extend_prev_word_start"
+S-A-right = "extend_next_word_start"
+C-s = [":w!","normal_mode"]
+C-v = [":clipboard-paste-before"]
