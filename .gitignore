@@ -1,1 +1,5 @@
 .DS_Store
+.config/raycast
+.config/texstudio
+.config/rstudio
+.config/slicer.org
