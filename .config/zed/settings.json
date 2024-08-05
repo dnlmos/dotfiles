@@ -13,6 +13,9 @@
     // - "system": Use the theme that corresponds to the system's appearance
     // - "light": Use the theme indicated by the "light" field
     // - "dark": Use the theme indicated by the "dark" field
+    "language_models": {
+        "openai": {}
+    },
     "outline_panel": {
         "dock": "right"
     },
@@ -330,7 +333,11 @@
     },
     "assistant": {
         // Version of this setting.
-        "version": "1",
+        "default_model": {
+            "provider": "openai",
+            "model": "gpt-4o"
+        },
+        "version": "2",
         // Whether the assistant is enabled.
         "enabled": true,
         // Whether to show the assistant panel button in the status bar.
@@ -340,19 +347,9 @@
         // Default width when the assistant is docked to the left or right.
         "default_width": 640,
         // Default height when the assistant is docked to the bottom.
-        "default_height": 320,
+        "default_height": 640.0,
         // AI provider.
-        "provider": {
-            "name": "openai",
-            // The default model to use when creating new contexts. This
-            // setting can take three values:
-            //
-            // 1. "gpt-3.5-turbo"
-            // 2. "gpt-4"
-            // 3. "gpt-4-turbo-preview"
-            // 4. "gpt-4o"
-            "default_model": "gpt-4o"
-        }
+        "provider": null
     },
     // Whether the screen sharing icon is shown in the os status bar.
     "show_call_status_icon": true,
@@ -361,7 +358,9 @@
     // The list of language servers to use (or disable) for all languages.
     //
     // This is typically customized on a per-language basis.
-    "language_servers": ["..."],
+    "language_servers": [
+        "..."
+    ],
     // When to automatically save edited buffers. This setting can
     // take four values.
     //
@@ -496,7 +495,9 @@
     "copilot": {
         // The set of glob patterns for which copilot should be disabled
         // in any matching file.
-        "disabled_globs": [".env"]
+        "disabled_globs": [
+            ".env"
+        ]
     },
     // Settings specific to journaling
     "journal": {
@@ -607,7 +608,12 @@
                 // Default directories to search for virtual environments, relative
                 // to the current working directory. We recommend overriding this
                 // in your project's settings, rather than globally.
-                "directories": [".env", "env", ".venv", "venv"],
+                "directories": [
+                    ".env",
+                    "env",
+                    ".venv",
+                    "venv"
+                ],
                 // Can also be `csh`, `fish`, and `nushell`
                 "activate_script": "default"
             }
@@ -654,14 +660,18 @@
             "format_on_save": {
                 "external": {
                     "command": "black",
-                    "arguments": ["-"]
+                    "arguments": [
+                        "-"
+                    ]
                 }
             }
         },
         "Astro": {
             "prettier": {
                 "allowed": true,
-                "plugins": ["prettier-plugin-astro"]
+                "plugins": [
+                    "prettier-plugin-astro"
+                ]
             }
         },
         "Blade": {
@@ -681,7 +691,12 @@
             }
         },
         "Elixir": {
-            "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
+            "language_servers": [
+                "elixir-ls",
+                "!next-ls",
+                "!lexical",
+                "..."
+            ]
         },
         "Gleam": {
             "tab_size": 2
@@ -697,7 +712,12 @@
             }
         },
         "HEEX": {
-            "language_servers": ["elixir-ls", "!next-ls", "!lexical", "..."]
+            "language_servers": [
+                "elixir-ls",
+                "!next-ls",
+                "!lexical",
+                "..."
+            ]
         },
         "HTML": {
             "prettier": {
@@ -707,7 +727,9 @@
         "Java": {
             "prettier": {
                 "allowed": true,
-                "plugins": ["prettier-plugin-java"]
+                "plugins": [
+                    "prettier-plugin-java"
+                ]
             }
         },
         "JavaScript": {
@@ -732,14 +754,20 @@
         "PHP": {
             "prettier": {
                 "allowed": true,
-                "plugins": ["@prettier/plugin-php"]
+                "plugins": [
+                    "@prettier/plugin-php"
+                ]
             }
         },
         "Prisma": {
             "tab_size": 2
         },
         "Ruby": {
-            "language_servers": ["solargraph", "!ruby-lsp", "..."]
+            "language_servers": [
+                "solargraph",
+                "!ruby-lsp",
+                "..."
+            ]
         },
         "SCSS": {
             "prettier": {
@@ -749,13 +777,17 @@
         "SQL": {
             "prettier": {
                 "allowed": true,
-                "plugins": ["prettier-plugin-sql"]
+                "plugins": [
+                    "prettier-plugin-sql"
+                ]
             }
         },
         "Svelte": {
             "prettier": {
                 "allowed": true,
-                "plugins": ["prettier-plugin-svelte"]
+                "plugins": [
+                    "prettier-plugin-svelte"
+                ]
             }
         },
         "TSX": {
@@ -781,7 +813,9 @@
         "XML": {
             "prettier": {
                 "allowed": true,
-                "plugins": ["@prettier/plugin-xml"]
+                "plugins": [
+                    "@prettier/plugin-xml"
+                ]
             }
         },
         "YAML": {
