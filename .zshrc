@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Starship
 eval "$(starship init zsh)"
 
@@ -15,6 +17,8 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Activate fzf
+source <(fzf --zsh)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
