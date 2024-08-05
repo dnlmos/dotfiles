@@ -12,6 +12,8 @@ $docker_context\
 $jobs\
 $conda\
 $cmd_duration\
+$custom\
+$time\
 $line_break\
 $character\
 """
@@ -22,15 +24,33 @@ palette = "catppuccin_mocha"
 add_newline = false
 
 [fill]
+style = "bold lavender"
 symbol = ' '
+
+[time]
+disabled = false
+style = "bg:surface1 fg:lavender"
+time_format = "%R"
+format = '[$time](bold $style)[](surface1)'
+
+[custom.live-clock-icon]
+command = 'echo "" | cut -c $(($(date +%H)%12+1))'
+when = true
+style = "bg:surface1 fg:lavender"
+format = "[](surface1)[$output ]($style)"
 
 [username]
 show_always = true
-format = '[ $user ]($style)'
+style_user = "bg:surface1 fg:yellow"
+format = '[](surface1)[$user ](bold $style)'
 disabled = false
 
+[character]
+success_symbol = '[](bold green) '
+error_symbol = '[ ](bold red) '
+
 [directory]
-style = "bold lavender"
+style = "bg:surface0 fg:lavender"
 format = '[ $path ]($style)'
 truncation_length = 3
 truncation_symbol = '…/'
@@ -43,17 +63,27 @@ truncate_to_repo = false
 'Pictures' = ' '
 
 [git_branch]
-style = 'fg:green'
+style = "bg:base fg:lavender"
 symbol = ' '
-format = '[on](white) [$symbol$branch ]($style)'
+format = '[on]($style)[ $symbol$branch]($style)'
 
 [git_status]
-style = 'fg:green'
-format = '([$all_status$ahead_behind]($style) )'
+style="bold lavender"
+format = '(:[$all_status$ahead_behind]($style)) '
+conflicted = '\[ [$count](bright-white bold)\]'
+ahead = '\[[﯁ ](bright-blue)[$count](bright-white bold)\]'
+behind = '\[[﮾ ](white)[$count](bright-white bold)\]'
+diverged = '\[[ ](purple)|[ ﯁ ](bright-blue)[$ahead_count](bright-white bold)[ ﮾ ](white)[$behind_count](bright-white)\]'
+untracked = '\[ [$count](bright-white bold)\]'
+stashed = '\[[](yellow) [$count](bright-white bold)\]'
+modified = '\[[ ](bright-yellow)[$count](bright-white bold)\]'
+staged = '\[[ ](bright-green)[$count](bright-white bold)\]'
+renamed = '\[[ ](bright-cyan) [$count](bright-white bold)\]'
+deleted = '\[ [$count](bright-white bold)\]'
 
 [cmd_duration]
 min_time = 1
-format = '[$duration]($style)'
+format = '[$duration]($style) '
 
 [jobs]
 symbol = ' '
@@ -85,7 +115,6 @@ style = "bg:blue"
 format = '[[ $symbol( $environment) ](fg:#surface0 bg:blue)]($style)'
 symbol = ""
 ignore_base	= false
-
 
 [golang]
 style = 'blue'

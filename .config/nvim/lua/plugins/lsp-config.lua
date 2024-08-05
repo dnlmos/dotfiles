@@ -24,40 +24,31 @@ return {
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       end
 
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  require('lspconfig').lua_ls.setup({
-      capabilities=capabilities})
-  require('lspconfig').html.setup({
-      capabilities=capabilities})
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      require('lspconfig').lua_ls.setup({
+        capabilities = capabilities })
+      require('lspconfig').html.setup({
+        capabilities = capabilities })
 
-  local ruff_config_path = vim.loop.cwd() .. '/pyproject.toml'
-  require('lspconfig').ruff_lsp.setup {
-        capabilities=capabilities,
-  on_attach = on_attach,
-  init_options = {
-    settings = {
-     format = {
-                                args = { "--config=" .. ruff_config_path }
-                            },
-                            lint = {
-                                args = { "--config=" .. ruff_config_path }
-                            }       
-    }
-  }
+      require 'lspconfig'.typst_lsp.setup {
+        settings = {
+          exportPdf = "onType" -- Choose onType, onSave or never.
+          -- serverPath = "" -- Normally, there is no need to uncomment it.
+        }
       }
-      require('lspconfig').pyright.setup({
-      capabilities=capabilities,
-      settings = {
-        pyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { '*' },
-      }}
-      }
+
+     require('lspconfig').pyright.setup({
+        capabilities = capabilities,
+        settings = {
+          pyright = {
+         },
+          python = {
+            analysis = {
+              -- Ignore all files for analysis to exclusively use Ruff for linting
+              ignore = { '*' },
+            }
+          }
+        }
       })
     end
   }
