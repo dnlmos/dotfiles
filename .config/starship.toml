@@ -50,7 +50,7 @@ success_symbol = '[](bold green) '
 error_symbol = '[ ](bold red) '
 
 [directory]
-style = "bg:surface0 fg:lavender"
+style = "bold bg:surface0 fg:lavender"
 format = '[ $path ]($style)'
 truncation_length = 3
 truncation_symbol = '…/'
@@ -63,9 +63,9 @@ truncate_to_repo = false
 'Pictures' = ' '
 
 [git_branch]
-style = "bg:base fg:lavender"
+style = "bold bg:surface1 fg:green"
 symbol = ' '
-format = '[on]($style)[ $symbol$branch]($style)'
+format = '[ $symbol$branch]($style)[](surface1)'
 
 [git_status]
 style="bold lavender"
