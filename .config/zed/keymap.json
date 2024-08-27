@@ -1,8 +1,14 @@
 [
-    {
-        "context": "Editor",
-        "bindings": {
-            "cmd-i": "editor::ShowCompletions"
-        }
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-i": "editor::ShowCompletions"
     }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "space o": "tab_switcher::Toggle"
+    }
+  }
 ]

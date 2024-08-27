@@ -8,17 +8,18 @@
   "buffer_font_size": 15,
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "ui_font_family": "Helvetica Neue",
+  "cursor_blink": false,
 
   // Line numbers, indent guides
   "relative_line_numbers": true,
   "preferred_line_length": 80,
-  "soft_wrap": "preferred_line_length",
-  "show_wrap_guides": true,
+  "wrap_guides": [88],
   "indent_guides": {
     "enabled": true,
     "active_line_width": 3,
     "coloring": "indent_aware"
   },
+  "show_whitespaces": "boundary",
 
   // Enable preconfigured inlay hints (Zed)
   "inlay_hints": {
@@ -30,9 +31,13 @@
     "show": false
   },
   "toolbar": {
-    "breadcrumbs": false,
-    "quick_actions": false
+    "breadcrumbs": true,
+    "quick_actions": true
   },
+  "scrollbar": {
+    "show": "never"
+  },
+  "vertical_scroll_margin": 0,
   "chat_panel": {
     "button": false
   },
@@ -90,5 +95,11 @@
   "file_types": {
     "Dockerfile": ["Dockerfile", "Dockerfile.*"],
     "JSON": ["json", "jsonc", "*.code-snippets"]
+  },
+
+  // Telemetry
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
   }
 }
