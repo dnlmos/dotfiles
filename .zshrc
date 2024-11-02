@@ -3,6 +3,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Starship
 eval "$(starship init zsh)"
 
+# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#   eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.json)"
+# fi
+#
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Disable underline
@@ -14,6 +18,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # export ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue
 # export ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
+alias ls="eza --icons=always"
 
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -34,4 +39,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
