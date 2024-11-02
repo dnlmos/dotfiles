@@ -8,7 +8,61 @@
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      "space o": "tab_switcher::Toggle"
+      "space o": "tab_switcher::Toggle",
+      "space f": "file_finder::Toggle"
+    }
+  },
+  // Pane Navigation from Editor
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  },
+  // Pane Navigation from Terminal
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  },
+  // Pane Navigation from Project Panel
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "alt-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "alt-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "alt-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "alt-l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  },
+  // Search project files / Command Palette
+  {
+    "bindings": {
+      "alt-j": "menu::SelectNext",
+      "alt-k": "menu::SelectPrev"
+    }
+  },
+  // Code Actions / Completions
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "alt-j": "editor::ContextMenuNext",
+      "alt-k": "editor::ContextMenuPrev"
+    }
+  },
+  // Splitting panes
+  {
+    "context": "Pane",
+    "bindings": {
+      "alt-shift-h": "pane::SplitLeft",
+      "alt-shift-l": "pane::SplitRight"
     }
   }
 ]
