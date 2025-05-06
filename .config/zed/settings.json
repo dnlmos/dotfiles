@@ -1,10 +1,10 @@
 {
-  "show_edit_predictions": false,
+  "show_edit_predictions": true,
   "icon_theme": "VSCode Icons (Dark)",
   "assistant": {
     "default_model": {
-      "provider": "lmstudio",
-      "model": "deepseek-coder-v2-lite-instruct-mlx"
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
@@ -16,6 +16,12 @@
       "projects": [
         {
           "paths": ["~/ONIX"]
+        },
+        {
+          "paths": ["~/cuda_cviko"]
+        },
+        {
+          "paths": ["~/forward_simulations"]
         },
         {
           "paths": ["~/gaussian-splatting"]
@@ -36,6 +42,12 @@
           "paths": ["~/robust_pca"]
         }
       ]
+    },
+    {
+      "host": "login.devana.nscc.sk",
+      "username": "dmosko",
+      "port": 5522,
+      "projects": []
     }
   ],
   "vim_mode": true,
@@ -49,7 +61,7 @@
     "custom": 1.2
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "ui_font_family": ".SystemUIFont",
+  "buffer_font_weight": 500,
   "cursor_blink": false,
 
   // Line numbers, indent guides
@@ -112,6 +124,14 @@
 
   // Languages settings
   "languages": {
+    "C++": {
+      "formatter": {
+        "external": {
+          "command": "clang-format"
+        }
+      },
+      "format_on_save": "on"
+    },
     "Python": {
       "show_edit_predictions": false,
       "language_servers": ["pyright", "ruff"],
