@@ -6,18 +6,10 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- Material theme setup
-  {
-    "marko-cerovac/material.nvim",
-    init = function()
-      vim.g.material_style = "darker"
-    end,
-  },
-
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "material",
+      colorscheme = "tokyonight-night",
     },
   },
 
@@ -94,16 +86,15 @@ return {
       ensure_installed = {
         "bash",
         "html",
-        "javascript",
         "json",
         "lua",
         "markdown",
         "markdown_inline",
+        "latex",
+        "rust",
         "python",
         "query",
         "regex",
-        "tsx",
-        "typescript",
         "vim",
         "yaml",
       },
