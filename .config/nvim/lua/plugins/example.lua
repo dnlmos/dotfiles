@@ -14,21 +14,47 @@ return {
   },
 
   {
-    "rebelot/kanagawa.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
     config = function()
-      require("kanagawa").setup({
-        transparent = true, -- Enable transparency
-        dimInactive = false,
-        terminalColors = true,
-        theme = "wave", -- You can also try "dragon" or "lotus"
+      require("catppuccin").setup({
+        flavour = "mocha", -- Options: latte, frappe, macchiato, mocha
+        transparent_background = true,
+        dim_inactive = {
+          enabled = false,
+        },
+        integrations = {
+          -- Enable integrations as needed
+          treesitter = true,
+          native_lsp = {
+            enabled = true,
+          },
+          -- add others like telescope, cmp, etc. if you use them
+        },
       })
 
       -- Apply the colorscheme
-      vim.cmd("colorscheme kanagawa")
+      vim.cmd("colorscheme catppuccin")
     end
   },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("kanagawa").setup({
+  --       transparent = true, -- Enable transparency
+  --       dimInactive = false,
+  --       terminalColors = true,
+  --       theme = "wave", -- You can also try "dragon" or "lotus"
+  --     })
+  --
+  --     -- Apply the colorscheme
+  --     vim.cmd("colorscheme kanagawa")
+  --   end
+  -- },
 
   -- Disable trouble.nvim
   {
