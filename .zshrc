@@ -1,12 +1,16 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Starship
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
-# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-#   eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.json)"
-# fi
+# oh-my-posh
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
+
 #
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
+fi
+
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Disable underline
@@ -39,3 +43,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/danielm/.lmstudio/bin"

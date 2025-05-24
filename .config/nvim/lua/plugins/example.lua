@@ -9,14 +9,41 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      -- colorscheme = "kanagawa",
     },
+  },
+
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("kanagawa").setup({
+        transparent = true, -- Enable transparency
+        dimInactive = false,
+        terminalColors = true,
+        theme = "wave", -- You can also try "dragon" or "lotus"
+      })
+
+      -- Apply the colorscheme
+      vim.cmd("colorscheme kanagawa")
+    end
   },
 
   -- Disable trouble.nvim
   {
     "folke/trouble.nvim",
     enabled = false,
+  },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      lazygit = {
+        configure = false,
+        theme = nil,
+      },
+    },
   },
 
   -- Add cmp-emoji to nvim-cmp
@@ -100,6 +127,9 @@ return {
       },
     },
   },
+
+  -- Tabline
+
 
   -- Mason tools to install
   {
