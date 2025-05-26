@@ -39,6 +39,7 @@ return {
       vim.cmd("colorscheme catppuccin")
     end
   },
+
   -- {
   --   "rebelot/kanagawa.nvim",
   --   lazy = false,
@@ -60,16 +61,6 @@ return {
   {
     "folke/trouble.nvim",
     enabled = false,
-  },
-
-  {
-    "folke/snacks.nvim",
-    opts = {
-      lazygit = {
-        configure = false,
-        theme = nil,
-      },
-    },
   },
 
   -- Add cmp-emoji to nvim-cmp
