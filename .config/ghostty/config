@@ -1,9 +1,10 @@
-background-opacity = 0.90
+background-opacity = 0.95
 background-blur-radius = 70
-theme = MaterialDarker
+theme = tokyonight_moon
 font-size = 16
 window-padding-x = 18
 window-padding-y = 16
+font-family = TX-02
 font-thicken = true
 cursor-style = bar
 

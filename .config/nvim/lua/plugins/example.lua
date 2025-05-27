@@ -13,32 +13,52 @@ return {
     },
   },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
+
+{
+    "folke/tokyonight.nvim",
+    name = "tokyonight",
     lazy = false,
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- Options: latte, frappe, macchiato, mocha
-        transparent_background = true,
-        dim_inactive = {
-          enabled = false,
-        },
-        integrations = {
-          -- Enable integrations as needed
-          treesitter = true,
-          native_lsp = {
-            enabled = true,
-          },
-          -- add others like telescope, cmp, etc. if you use them
+      require("tokyonight").setup({
+        style = "storm", -- Options: storm, night, moon, day
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
         },
       })
 
       -- Apply the colorscheme
-      vim.cmd("colorscheme catppuccin")
+      vim.cmd("colorscheme tokyonight")
     end
   },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup({
+  --       flavour = "mocha", -- Options: latte, frappe, macchiato, mocha
+  --       transparent_background = true,
+  --       dim_inactive = {
+  --         enabled = false,
+  --       },
+  --       integrations = {
+  --         -- Enable integrations as needed
+  --         treesitter = true,
+  --         native_lsp = {
+  --           enabled = true,
+  --         },
+  --         -- add others like telescope, cmp, etc. if you use them
+  --       },
+  --     })
+  --
+  --     -- Apply the colorscheme
+  --     vim.cmd("colorscheme catppuccin")
+  --   end
+  -- },
 
   -- {
   --   "rebelot/kanagawa.nvim",
