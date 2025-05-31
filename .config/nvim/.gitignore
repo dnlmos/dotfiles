@@ -1,4 +1,5 @@
 tt.*
+.DS_Store
 .tests
 doc/tags
 debug
