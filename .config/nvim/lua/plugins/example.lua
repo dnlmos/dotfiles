@@ -13,38 +13,26 @@ return {
     },
   },
 
-
-{
-    "folke/tokyonight.nvim",
-    name = "tokyonight",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("tokyonight").setup({
-        style = "storm", -- Options: storm, night, moon, day
-        transparent = true,
-        styles = {
-          sidebars = "transparent",
-          floats = "transparent",
-        },
-      })
-
-      -- Apply the colorscheme
-      vim.cmd("colorscheme tokyonight")
-    end
-  },
-
   -- Disable trouble.nvim
   {
     "folke/trouble.nvim",
     enabled = false,
   },
 
-  -- Disable neo-tree file explorer
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    enabled = false
+  "folke/snacks.nvim",
+    opts = {
+      indent = {
+        enabled = false
+      }
+    }
   },
+
+  -- -- Disable neo-tree file explorer
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   enabled = false
+  -- },
 
   -- Add cmp-emoji to nvim-cmp
   {
