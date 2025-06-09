@@ -1,4 +1,3 @@
-# 💤 LazyVim
+# <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Neovim-logo.svg" alt="Neovim Logo" width="25"/> My Neovim Config
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+A modern and modular Neovim configuration based on kickstart.nvim

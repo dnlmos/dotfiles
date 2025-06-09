@@ -1,9 +1,27 @@
-tt.*
+# macOS system files
 .DS_Store
-.tests
-doc/tags
-debug
-.repro
-foo.*
-*.log
-data
+
+# Tag files
+tags
+
+# Custom scripts
+test.sh
+
+# Neovim Lua workspace settings
+.luarc.json
+
+# Spelling files
+spell/
+
+# Lazy.nvim lockfile
+lazy-lock.json
+
+# Swap/backup/undo files
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# Session files
+session/
