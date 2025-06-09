@@ -4,7 +4,7 @@ Modular Neovim configuration based on [kickstart.nvim](https://github.com/nvim-l
 
 ## Previews
 
-![Preview 0](preview0.png)
-![Preview 1](preview1.png)
+![Preview 0](preview_0.png)
+![Preview 1](preview_1.png)
 
 
