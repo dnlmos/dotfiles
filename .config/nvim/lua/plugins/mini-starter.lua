@@ -23,7 +23,7 @@ return {
     -- Combine items
     local items = vim.list_extend({
       starter.sections.builtin_actions(),
-      starter.sections.recent_files(10, false),
+      starter.sections.recent_files(10, true),
     }, custom_items)
 
     -- Add Sessions last
