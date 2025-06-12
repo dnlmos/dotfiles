@@ -6,5 +6,4 @@ window-padding-y = 16
 font-family = Commit Mono
 font-thicken = true
 cursor-style = bar
-adjust-cell-height = 10%
 shell-integration-features = sudo
