@@ -52,12 +52,19 @@ return { -- Useful plugin to show you pending keybinds.
       { "<leader>d", group = "Debug" },
       { "<leader>f", group = "File/Find" },
       { "<leader>g", group = "Git" },
-      { "<leader>q", group = "Quit/Session" },
+      { "<leader>Q", group = "Quit/Session" },
       { "<leader>s", group = "Search" },
       { "<leader>sR", group = "Search and Replace" },
-      { "<leader>u", group = "UI", icon = { icon = "󰙵 ", color = "cyan" } },
-      { "<leader>x", group = "Diagnostics/Quickfix", icon = { icon = "󱖫 ", color = "green" } },
+      { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
+      { "<leader>q", group = "quickfix" },
 
+      {
+        "<leader>q",
+        function()
+          vim.diagnostic.setloclist()
+        end,
+        desc = "Open diagnostic [Q]uickfix list",
+      },
       -- Navigation and motion groups
       { "[", group = "Prev" },
       { "]", group = "Next" },
@@ -94,7 +101,6 @@ return { -- Useful plugin to show you pending keybinds.
     },
   },
   keys = {
-    -- Keybinding to show buffer-specific keymaps (excluding global ones)
     {
       "<leader>?",
       function()
