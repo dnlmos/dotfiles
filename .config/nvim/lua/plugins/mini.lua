@@ -9,15 +9,15 @@ return { -- Collection of various small independent plugins/modules
     --  - ci'  - [C]hange [I]nside [']quote
     require("mini.ai").setup({ n_lines = 500 })
 
+    -- In visual mode:
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
-    --
+    -- - saf - Surround around function
     -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
     -- - sd'   - [S]urround [D]elete [']quotes
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require("mini.surround").setup()
     require("mini.git").setup()
     require("mini.diff").setup()
-    require("mini.indentscope").setup()
     require("mini.pairs").setup()
   end,
 }
