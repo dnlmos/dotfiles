@@ -58,13 +58,13 @@ return { -- Useful plugin to show you pending keybinds.
       { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
       { "<leader>q", group = "quickfix" },
 
-      {
-        "<leader>q",
-        function()
-          vim.diagnostic.setloclist()
-        end,
-        desc = "Open diagnostic [Q]uickfix list",
-      },
+      -- {
+      --   "<leader>q",
+      --   function()
+      --     vim.diagnostic.setloclist()
+      --   end,
+      --   desc = "Open diagnostic [Q]uickfix list",
+      -- },
       -- Navigation and motion groups
       { "[", group = "Prev" },
       { "]", group = "Next" },
