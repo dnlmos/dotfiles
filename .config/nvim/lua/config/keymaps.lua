@@ -33,3 +33,5 @@ end, { desc = "Code Actions" })
 vim.keymap.set("n", "<leader>cr", function()
   vim.lsp.buf.rename()
 end, { desc = "Rename" })
+
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show diagnostics (float)" })
