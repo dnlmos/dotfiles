@@ -211,4 +211,13 @@ end, {
   desc = "Get all the information about all LSP attached",
 })
 
+-- Disable spell checking for Markdown files by default
+-- this is mainly due to annoying spell check in docs -> vim.lsp.buf.hover()
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
+
 return M
