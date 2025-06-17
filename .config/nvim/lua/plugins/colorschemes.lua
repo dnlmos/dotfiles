@@ -54,17 +54,17 @@ return {
   {
     "rebelot/kanagawa.nvim",
     opts = {
-      compile = false, -- enable compiling the colorscheme
+      compile = false,  -- enable compiling the colorscheme
       undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
       typeStyle = { italic = true },
-      transparent = true, -- do not set background color
-      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      transparent = true,    -- do not set background color
+      dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
       terminalColors = true, -- define vim.g.terminal_color_{0,17}
-      colors = { -- add/modify theme and palette colors
+      colors = {             -- add/modify theme and palette colors
         palette = {},
         theme = { wave = {}, lotus = {}, dragon = {}, all = { ui = { bg_gutter = "none" } } },
       },
@@ -96,8 +96,8 @@ return {
           TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
         }
       end,
-      theme = "wave", -- Load "wave" theme when 'background' option is not set
-      background = { -- map the value of 'background' option to a theme
+      theme = "wave",  -- Load "wave" theme when 'background' option is not set
+      background = {   -- map the value of 'background' option to a theme
         dark = "wave", -- try "dragon" !
         light = "lotus",
       },

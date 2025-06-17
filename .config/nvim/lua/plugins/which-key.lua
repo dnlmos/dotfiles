@@ -1,4 +1,4 @@
-return { -- Useful plugin to show you pending keybinds.
+return {              -- Useful plugin to show you pending keybinds.
   "folke/which-key.nvim",
   event = "VeryLazy", -- Sets the loading event to 'VimEnter'
   opts = {
@@ -74,7 +74,7 @@ return { -- Useful plugin to show you pending keybinds.
 
       -- Sub-groups (these will appear when their parent group key is pressed)
       { "<leader>dp", group = "Profiler" }, -- Under <leader>d
-      { "<leader>gh", group = "Hunks" }, -- Under <leader>g
+      { "<leader>gh", group = "Hunks" },    -- Under <leader>g
 
       -- Mappings that expand dynamically using which-key.extras
       {
@@ -95,7 +95,7 @@ return { -- Useful plugin to show you pending keybinds.
 
       -- Other specific keymaps, potentially mode-specific
       {
-        mode = { "n", "v" }, -- Apply to Normal and Visual modes
+        mode = { "n", "v" },                     -- Apply to Normal and Visual modes
         { "gx", desc = "Open with system app" }, -- Better description for 'gx'
       },
     },
