@@ -1,7 +1,9 @@
 vim.lsp.enable({
   "pyright",
   "lua_ls",
-  "docker_ls",
+  "dockerls",
+  "gopls",
+  "rust-analyzer",
   "jsonls"
 })
 
