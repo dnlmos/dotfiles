@@ -1,3 +1,4 @@
+-- Buffers (tabline)
 return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
