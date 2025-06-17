@@ -1,10 +1,11 @@
+-- Floating windows, notify, cmd line, ...
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
-    cmdline = {
-      view = "cmdline",
-    },
+    -- cmdline = {
+    --   view = "cmdline",
+    -- },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
