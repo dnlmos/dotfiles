@@ -56,7 +56,8 @@ return {              -- Useful plugin to show you pending keybinds.
       { "<leader>s", group = "Search" },
       { "<leader>sR", group = "Search and Replace" },
       { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
-      { "<leader>q", group = "quickfix" },
+      { "<leader>q", group = "Quickfix list" },
+      { "<leader>r", group = "REPL" },
 
       -- {
       --   "<leader>q",
