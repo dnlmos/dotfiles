@@ -5,6 +5,7 @@ return {
   opts = {
     lsp = {
       hover = { enabled = false },
+      signature = { enabled = false }
     }
     -- cmdline = {
     --   view = "cmdline",
