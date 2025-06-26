@@ -1,15 +1,17 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Starship
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
-# oh-my-posh
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
-
+# # oh-my-posh
+# eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
 #
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
-fi
+# #
+# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#   eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
+# fi
+
+alias fzf-tmux='~/.tmux/fzf-tmux.sh'
 
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

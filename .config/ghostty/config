@@ -1,10 +1,12 @@
 background-opacity = 0.95
 background-blur-radius = 70
 font-size = 16
-theme = tokyonight
+theme = catppuccin-mocha
 window-padding-x = 18
 window-padding-y = 16
 font-family = Commit Mono
 font-thicken = true
 cursor-style = bar
 shell-integration-features = sudo
+
+window-decoration = none
