@@ -31,6 +31,7 @@ return {
     end,
     formatters_by_ft = {
       lua = { "stylua" },
+      rust = { "rustfmt", lsp_format = "fallback" },
       python = {
         -- To fix auto-fixable lint errors.
         "ruff_fix",
