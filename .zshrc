@@ -3,16 +3,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Starship
 eval "$(starship init zsh)"
 
-# # oh-my-posh
-# eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
-#
-# #
-# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-#   eval "$(oh-my-posh init zsh --config ~/.config/ohmyposhtheme.omp.json)"
-# fi
-
-alias fzf-tmux='~/.tmux/fzf-tmux.sh'
-
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Disable underline
@@ -24,7 +14,10 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # export ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue
 # export ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
-alias ls="eza --icons=always"
+# Eza
+alias l="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2  --icons --git"
 
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -48,3 +41,5 @@ unset __conda_setup
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/danielm/.lmstudio/bin"
+export XDG_CONFIG_HOME="/Users/danielm/.config"
+
