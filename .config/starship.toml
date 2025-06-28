@@ -17,13 +17,24 @@ success_symbol = '[➜](bold green)'
 format =  '[$symbol$branch(:$remote_branch)]($style)'
 
 [aws]
-format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+format = '[ $symbol(profile: "$profile" )(\(region: $region\) )]($style)'
 disabled = false
 style = 'bold blue'
 symbol = " "
 
 [golang]
-format = '[ ](bold cyan)'
+format = '[  ](bold cyan)'
+
+[python]
+symbol = ' '
+format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ""
+
+[conda]
+format = '[[ $symbol( $environment) ](fg:#surface0 bg:blue)]($style)'
+symbol = ""
+ignore_base = false
 
 [kubernetes]
 symbol = '☸ '
