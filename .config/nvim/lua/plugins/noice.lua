@@ -6,6 +6,13 @@ return {
     lsp = {
       hover = { enabled = false },
       signature = { enabled = false }
+    },
+    views = {
+      mini = {
+        win_options = {
+          winblend = 0
+        }
+      },
     }
     -- cmdline = {
     --   view = "cmdline",
