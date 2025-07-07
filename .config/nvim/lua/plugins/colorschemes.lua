@@ -15,7 +15,7 @@ return {
         keywordStyle = { italic = true },
         statementStyle = {},
         typeStyle = {},
-        transparent = false,
+        transparent = true,
         dimInactive = false,
         terminalColors = true,
         colors = {
