@@ -5,4 +5,4 @@ require("config.autocmds")
 require("config.keymaps")
 
 -- Set theme
-vim.cmd("colorscheme catppuccin")
+-- vim.cmd("colorscheme minischeme")

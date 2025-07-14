@@ -43,3 +43,5 @@ unset __conda_setup
 export PATH="$PATH:/Users/danielm/.lmstudio/bin"
 export XDG_CONFIG_HOME="/Users/danielm/.config"
 
+export PATH="$PATH:/Users/danielm/.cargo/bin"
+
