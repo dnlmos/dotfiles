@@ -1,3 +1,7 @@
+shell-integration = zsh
+mouse-hide-while-typing = true
+scrollback-limit = 1000000
+
 font-size = 16
 theme = catppuccin-mocha
 window-padding-x = 8
@@ -5,6 +9,5 @@ window-padding-y = 8
 font-family = Hack
 font-thicken = true
 cursor-style = bar
-shell-integration-features = sudo
 
 window-decoration = none

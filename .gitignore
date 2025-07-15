@@ -1,6 +1,6 @@
 .DS_Store
-.config/raycast
-.config/qBittorrent
-.config/texstudio
-.config/rstudio
-.config/slicer.org
+raycast
+qBittorrent
+texstudio
+rstudio
+slicer.org
