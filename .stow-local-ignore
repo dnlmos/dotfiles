@@ -1,0 +1,8 @@
+.gitignore
+.git
+
+.DS_Store
+manual-apps.md
+Brewfile
+README.md
+
