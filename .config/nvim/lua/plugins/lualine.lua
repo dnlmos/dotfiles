@@ -1,32 +1,42 @@
 -- Lualine statusline config
 return {
-  {
-    "nvim-lualine/lualine.nvim",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {
+  "nvim-lualine/lualine.nvim",
+  enabled = true,
+  lazy = true,
+  event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+  config = function()
+    require("lualine").setup({
       options = {
-        component_separators = { left = "|", right = "|" },
-        section_separators = { left = nil, right = nil },
-        globalstatus = true,
+        theme = "auto",
+        icons_enabled = true,
+        section_separators = "",
+        component_separators = "",
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch", "diff" },
+        lualine_b = {},
         lualine_c = {
           {
-            "filename",
-            file_status = true,
-            newfile_status = true,
-            path = 1,
-            symbols = {
-              modified = "*",
-              readonly = "!",
-              unnamed = "Unnamed",
-              newfile = "@",
+            "filetype",
+            icon_only = true,
+            separator = "",
+            padding = {
+              left = 1,
+              right = 0,
             },
           },
+          {
+            "filename",
+            path = 1,
+            symbols = {
+              modified = "  ",
+              readonly = "",
+              unnamed = "",
+            },
+          },
+          { "diagnostics", sources = { "nvim_lsp" }, symbols = { error = " ", warn = " ", info = " " } },
+          { "diff" },
+          { "searchcount" },
         },
         lualine_x = {
           function()
@@ -38,12 +48,25 @@ return {
             return msg or ""
           end,
           -- "encoding",
-          "filetype",
+          "branch",
         },
-        lualine_y = { "diagnostics" },
-        lualine_z = { "location" },
+        lualine_y = { "progress" },
+        lualine_z = {
+          -- function()
+          --   return " " .. os.date("%R")
+          -- end,
+        },
       },
-      extensions = { "neo-tree", "fugitive", "mason", "lazy", "fzf" },
-    },
-  },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { "filename" },
+        lualine_x = { "location" },
+        lualine_y = {},
+        lualine_z = {},
+      },
+      tabline = {},
+      extensions = { "neo-tree", "lazy" },
+    })
+  end,
 }
