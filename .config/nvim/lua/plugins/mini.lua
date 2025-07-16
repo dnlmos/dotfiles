@@ -11,23 +11,23 @@ return { -- Collection of various small independent plugins/modules
 
     require("mini.base16").setup({
       palette = {
-        base00 = "#0E1116", -- Crust (Darkest background)
-        base01 = "#131925", -- Mantle
-        base02 = "#1C2533", -- Surface0
-        base03 = "#2E3A49", -- Overlay0 (Comments)
-        base04 = "#5B6675", -- Overlay2
-        base05 = "#A8B0C0", -- Text (Primary foreground, softened)
-        base06 = "#C9D1DA", -- Lighter foreground
-        base07 = "#E5E9F0", -- Purest white, toned down
+        base00 = "#1a1f2b", -- Dark Navy
+        base01 = "#232834", -- Charcoal
+        base02 = "#2e3440", -- Slate Gray
+        base03 = "#4b5568", -- Steel Blue Gray
+        base04 = "#7a889a", -- Cool Gray
+        base05 = "#c2c6d8", -- Light Lavender Gray
+        base06 = "#d6d9e5", -- Pale Silver
+        base07 = "#eff1f5", -- Almost White
 
-        base08 = "#D87C7C", -- Red (Desaturated rose)
-        base09 = "#D29B6C", -- Peach (Dusty muted orange)
-        base0A = "#E8C275", -- Yellow (Soft gold)
-        base0B = "#6EC9B0", -- Green (Cool seafoam)
-        base0C = "#75C6E0", -- Teal (Icy blue)
-        base0D = "#5A99D6", -- Blue (Softened accent)
-        base0E = "#9984D4", -- Mauve (Muted lilac)
-        base0F = "#D48CAF", -- Maroon (Faded orchid)
+        base08 = "#D87C7C", -- Soft Red
+        base09 = "#deb974", -- Golden Sand
+        base0A = "#e4d67c", -- Muted Yellow
+        base0B = "#88d1a2", -- Mint Green
+        base0C = "#96d5e5", -- Sky Blue
+        base0D = "#7ba7df", -- Cornflower Blue
+        base0E = "#c19cd2", -- Lavender Purple
+        base0F = "#b47777", -- Dusty Rose
       },
       use_cterm = true,
       plugins = { default = true }
