@@ -5,4 +5,6 @@ require("config.autocmds")
 require("config.keymaps")
 
 -- Set theme
+vim.opt.termguicolors = true
+
 -- vim.cmd("colorscheme minischeme")
