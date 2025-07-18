@@ -11,23 +11,23 @@ return { -- Collection of various small independent plugins/modules
 
     require("mini.base16").setup({
       palette = {
-        base00 = "#1a1f2b", -- Dark Navy
-        base01 = "#232834", -- Charcoal
-        base02 = "#2e3440", -- Slate Gray
-        base03 = "#4b5568", -- Steel Blue Gray
-        base04 = "#7a889a", -- Cool Gray
-        base05 = "#c2c6d8", -- Light Lavender Gray
-        base06 = "#d6d9e5", -- Pale Silver
-        base07 = "#eff1f5", -- Almost White
+        base00 = "#1a1f2b",
+        base01 = "#232834",
+        base02 = "#2e3440",
+        base03 = "#4b5568",
+        base04 = "#7a889a",
+        base05 = "#c2c6d8",
+        base06 = "#d6d9e5",
+        base07 = "#eff1f5",
 
-        base08 = "#D87C7C", -- Soft Red
-        base09 = "#deb974", -- Golden Sand
-        base0A = "#e4d67c", -- Muted Yellow
-        base0B = "#88d1a2", -- Mint Green
-        base0C = "#96d5e5", -- Sky Blue
-        base0D = "#7ba7df", -- Cornflower Blue
-        base0E = "#c19cd2", -- Lavender Purple
-        base0F = "#b47777", -- Dusty Rose
+        base08 = "#D87C7C",
+        base09 = "#D29B6C",
+        base0A = "#E8C275",
+        base0B = "#6EC9B0",
+        base0C = "#75C6E0",
+        base0D = "#5A99D6",
+        base0E = "#9984D4",
+        base0F = "#D48CAF",
       },
       use_cterm = true,
       plugins = { default = true }

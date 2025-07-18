@@ -6,7 +6,6 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    -- explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
@@ -25,13 +24,6 @@ return {
   },
   keys = {
     -- Top Pickers & Explorer
-    {
-      "<leader>cl",
-      function()
-        Snacks.picker.lsp_config()
-      end,
-      desc = "Lsp Info",
-    },
     {
       "<leader><space>",
       function()
@@ -384,32 +376,11 @@ return {
     },
     -- Other
     {
-      "<leader>z",
-      function()
-        Snacks.zen()
-      end,
-      desc = "Toggle Zen Mode",
-    },
-    {
       "<leader>Z",
       function()
         Snacks.zen.zoom()
       end,
       desc = "Toggle Zoom",
-    },
-    {
-      "<leader>.",
-      function()
-        Snacks.scratch()
-      end,
-      desc = "Toggle Scratch Buffer",
-    },
-    {
-      "<leader>S",
-      function()
-        Snacks.scratch.select()
-      end,
-      desc = "Select Scratch Buffer",
     },
     {
       "<leader>n",
@@ -504,9 +475,6 @@ return {
         Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
         Snacks.toggle.diagnostics():map("<leader>ud")
         Snacks.toggle.line_number():map("<leader>ul")
-        Snacks.toggle
-            .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
-            :map("<leader>uc")
         Snacks.toggle.treesitter():map("<leader>uT")
         Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
         Snacks.toggle.inlay_hints():map("<leader>uh")
