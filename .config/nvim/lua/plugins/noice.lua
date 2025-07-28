@@ -13,10 +13,10 @@ return {
           winblend = 0
         }
       },
-    }
-    -- cmdline = {
-    --   view = "cmdline",
-    -- },
+    },
+    cmdline = {
+      view = "cmdline", -- disable floating cmdline
+    },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

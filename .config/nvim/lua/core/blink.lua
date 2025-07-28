@@ -134,7 +134,7 @@ return {
         },
         completion = {
           menu = {
-            border = nil,
+            border = 'single',
             scrolloff = 1,
             scrollbar = false,
             draw = {
@@ -148,7 +148,7 @@ return {
           },
           documentation = {
             window = {
-              border = nil,
+              border = 'single',
               scrollbar = false,
               winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,EndOfBuffer:BlinkCmpDoc",
             },
