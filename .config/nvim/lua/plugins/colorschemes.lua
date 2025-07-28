@@ -116,4 +116,15 @@ return {
       })
     end
   },
+
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({
+        transparent = true,
+        italic = false
+      })
+    end
+  }
+
 }
