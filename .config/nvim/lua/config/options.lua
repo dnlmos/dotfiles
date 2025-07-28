@@ -12,6 +12,14 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+-- Enables smart indentation, which automatically adjusts indentation based on the context of the code.
+vim.opt.smartindent = true
+
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -38,10 +46,12 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+-- -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Enables incremental search, which shows matches as you type
+vim.opt.incsearch = true
 -- Keep signcolumn on by default
 vim.o.signcolumn = "yes"
 
@@ -80,4 +90,10 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
-vim.o.winborder = "single"
+-- guideline for line length
+vim.opt.colorcolumn = "80"
+
+-- Enables true color support in the terminal
+vim.opt.termguicolors = true
+
+-- vim.o.winborder = "single"

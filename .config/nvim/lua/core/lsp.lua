@@ -4,7 +4,11 @@ vim.lsp.enable({
   "dockerls",
   "gopls",
   "rust-analyzer",
-  "jsonls"
+  "jsonls",
+  "tailwindcss",
+  "css-ls",
+  "html-ls",
+  "ts-ls"
 })
 
 vim.diagnostic.config({

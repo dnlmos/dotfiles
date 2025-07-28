@@ -338,14 +338,14 @@ return {
       end,
       desc = "Goto Declaration",
     },
-    {
-      "gr",
-      function()
-        Snacks.picker.lsp_references()
-      end,
-      nowait = true,
-      desc = "References",
-    },
+    -- {
+    --   "gr",
+    --   function()
+    --     Snacks.picker.lsp_references()
+    --   end,
+    --   nowait = true,
+    --   desc = "References",
+    -- },
     {
       "gI",
       function()
