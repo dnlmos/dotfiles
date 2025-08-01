@@ -6,7 +6,7 @@ shell-integration-features=sudo
 font-size = 16
 theme = catppuccin-mocha
 
-font-family = JetbrainsMono Nerd Font Mono
+font-family = JetbrainsMono Nerd Font
 font-thicken = true
 
 cursor-style = bar
