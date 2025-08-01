@@ -96,4 +96,4 @@ vim.opt.colorcolumn = "80"
 -- Enables true color support in the terminal
 vim.opt.termguicolors = true
 
--- vim.o.winborder = "single"
+vim.o.winborder = "single"
