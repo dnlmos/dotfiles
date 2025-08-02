@@ -1,0 +1,43 @@
+layers:
+  DEF:
+    - [{h: "~", t: "`"}, {h: "!", t: 1}, {h: "@", t: 2}, {h: "#", t: 3}, {h: "$", t: 4}, {h: "%", t: 5}, {h: "^", t: 6}, {h: "&", t: 7}, {h: "*", t: 8}, {h: "(", t: 9}, {h: ")", t: 0}, {h: "_", t: "-"}]
+    - [Tab, Q, W, E, R, T, Y, U, I, O, P, {h: "+", t: "="}]
+    - [{h: "{", t: "["}, {h: Gui, t: A}, {h: Ctrl, t: S}, {h: Alt, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Alt, t: K}, {h: Ctrl, t: L}, {h: Gui, t: "'"}, {h: "}", t: "]"}]
+    - [{h: ":", t: ";"}, Z, X, C, V, B, N, M, {h: "<", t: ","}, {h: ">", t: "."}, {h: "?", t: "/"}, {h: "|", t: "\\"}]
+    - [{h: Media, t: Esc}, {h: Nav, t: Space}, {h: Mouse, t: Tab}, {h: Sym, t: Enter}, {h: Num, t: Bksp}, {h: Fun, t: Del}]
+  MEDIA:
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", LGui, LAlt, LCtrl, LShift, "", "", Prev, "Vol -", "Vol +", Next, ""]
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", Mute, Play, Stop]
+  NAV:
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", {h: LSG, t: "z"}, {h: LGui, t: "v"}, {h: LGui, t: "c"}, {h: LGui, t: "x"}, {h: LGui, t: "z"}, ""]
+    - ["", "LGui", "LAlt", "LCtrl", "LShift", "", "Caps Lock", "Left", "Down", "Up", "Right", ""]
+    - ["", "", "", "", "", "", "Insert", "Home", "Page Down", "Page Up", "End", ""]
+    - ["", "", "", Enter, Bksp, Del]
+  MOUSE:
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", "", "", "", "", "", {h: LSG, t: "z"}, {h: LGui, t: "v"}, {h: LGui, t: "c"}, {h: LGui, t: "x"}, {h: LGui, t: "z"}, ""]
+    - ["", "LGui", "LAlt", "LCtrl", "LShift", "", "Caps Lock", "Mouse Left", "Mouse Down", "Mouse Up", "Mouse Right", ""]
+    - ["", "", "", "", "", "", "Insert", "Mouse Wheel Left", "Mouse Wheel Down", "Mouse Wheel Up", "Mouse Wheel Right", ""]
+    - ["", "", "", "Mouse 1", "Mouse 2", "Mouse 3"]
+  SYM:
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", "{", "&", "*", "(", "}", "", "", "", "", "", ""]
+    - ["", ":", "$", "%", "^", "+", "", RShift, RCtrl, RAlt, RGui, ""]
+    - ["", "~", "!", "@", "#", "|", "", "", "", "", "", ""]
+    - ["(", ")", "_", "", "", ""]
+  NUM:
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", "[", "7", "8", "9", "]", "", "", "", "", "", ""]
+    - ["", ";", "4", "5", "6", "=", "", RShift, RCtrl, RAlt, RGui, ""]
+    - ["", "`", "1", "2", "3", "\\", "", "", "", "", "", ""]
+    - [".", "0", "-", "", "", ""]
+  FUN:
+    - ["", "", "", "", "", "", "", "", "", "", "", ""]
+    - ["", F12, F7, F8, F9, "Print Screen", "", "", "", "", "", ""]
+    - ["", F11, F4, F5, F6, "Scroll Lock", "", RShift, RCtrl, RAlt, RGui, ""]
+    - ["", F10, F1, F2, F3, Pause, "", "", "", "", "", ""]
+    - [F13, Space, Tab, "", "", ""]
