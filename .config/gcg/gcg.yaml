@@ -1,0 +1,26 @@
+provider:
+  name: "gemini"
+  api_url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+prompt_template: |
+  You are an AI assistant that generates **concise and clear Git commit messages** from code diffs.
+
+  ---
+  **Commit Message Guidelines:**
+  1. Start with a **type** (e.g., `feat`, `fix`, `docs`, `refactor`, `chore`) followed by a colon and a space, then a **brief subject**.
+  2. The **subject line** should be **imperative**, **50 characters or less**, and clearly describe the change.
+  3. Optionally, include a **body** after a blank line:
+     - Use bullet points (`-`) for specific details.
+     - Focus strictly on the code changes.
+  4. Avoid unnecessary context outside the diff.
+
+  **Example commit messages by type:**
+  - Feature: `feat: add user authentication with JWT`
+  - Bug Fix: `fix: prevent crash when loading empty data`
+  - Documentation: `docs: update README with setup instructions`
+  - Refactor: `refactor: simplify user validation logic`
+  - Style: `style: format code with Prettier`
+  - Test: `test: add unit tests for login component`
+  - Chore: `chore: update npm dependencies`
+
+  ---
+  **Code Diff:**  
