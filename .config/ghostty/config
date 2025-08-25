@@ -3,10 +3,17 @@ mouse-hide-while-typing = true
 scrollback-limit = 1000000
 shell-integration-features=sudo
 
-font-size = 16
 theme = catppuccin-mocha
 
-font-family = JetbrainsMono Nerd Font
+font-family = "Iosevka Output Extended"
+
+# variants for bold and italic styles
+font-family-bold = "Iosevka Output Extended Bold"
+font-family-italic = "Iosevka Output Extended Italic"
+font-family-bold-italic = "Iosevka Output Extended Bold Italic"
+
+font-size = 16
+
 font-thicken = true
 
 cursor-style = bar
