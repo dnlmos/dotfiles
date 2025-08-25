@@ -11,7 +11,7 @@ This repository uses [`GNU stow`](https://www.gnu.org/software/stow/) to manage 
 ### 1. 📥 Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+git clone https://github.com/dnlmos/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
@@ -20,4 +20,4 @@ cd ~/.dotfiles
 stow .
 ```
 
-This will create symbolic links from each file / directory in dotfiles (e.g., .config, .zshrc) into your $HOME directory
+This will create symbolic links from each file / directory in dotfiles (e.g., `.config`, `.zshrc`) into your `$HOME` directory
