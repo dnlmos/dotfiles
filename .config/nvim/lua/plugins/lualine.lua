@@ -39,15 +39,7 @@ return {
           { "searchcount" },
         },
         lualine_x = {
-          function()
-            local ok, noice = pcall(require, "noice")
-            if not ok then
-              return ""
-            end
-            local msg = require("noice").api.status.command.get()
-            return msg or ""
-          end,
-          -- "encoding",
+          "encoding",
           "branch",
         },
         lualine_y = { "progress" },

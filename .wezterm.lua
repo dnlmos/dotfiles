@@ -25,9 +25,9 @@ config.inactive_pane_hsb = {
 }
 
 config.keys = {
-  { key = "LeftArrow",  mods = mod.SUPER_REV, action = wezterm.action({ SendString = "\x1bb" }) }, -- ALT + Left to move one word left
+  { key = "LeftArrow",  mods = mod.SUPER_REV, action = wezterm.action({ SendString = "\x1bb" }) },  -- ALT + Left to move one word left
   { key = "LeftArrow",  mods = mod.SUPER,     action = wezterm.action({ SendString = "\x1bOH" }) }, -- CMD + Left to move to the beginning of the line
-  { key = "RightArrow", mods = mod.SUPER_REV, action = wezterm.action({ SendString = "\x1bf" }) }, -- ALT + Right to move one word right
+  { key = "RightArrow", mods = mod.SUPER_REV, action = wezterm.action({ SendString = "\x1bf" }) },  -- ALT + Right to move one word right
   { key = "RightArrow", mods = mod.SUPER,     action = wezterm.action({ SendString = "\x1bOF" }) }, -- CMD + Right to move to the end of the line
   -- tabs: navigation
   { key = "[",          mods = mod.SUPER,     action = act.ActivateTabRelative(-1) },

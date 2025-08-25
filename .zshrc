@@ -1,6 +1,11 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Starship
+if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
+      "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
+    zle -N zle-keymap-select "";
+fi
+
 eval "$(starship init zsh)"
 
 # Activate syntax highlighting
@@ -45,3 +50,5 @@ export XDG_CONFIG_HOME="/Users/danielm/.config"
 
 export PATH="$PATH:/Users/danielm/.cargo/bin"
 
+# Enable vi mode
+bindkey -v
