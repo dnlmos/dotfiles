@@ -18,7 +18,7 @@ font-thicken = true
 
 cursor-style = bar
 
-window-decoration = none
+# window-decoration = none
 
 confirm-close-surface = false
 clipboard-read = allow
@@ -28,7 +28,7 @@ window-padding-x = 6
 window-padding-balance = true
 window-width = 85
 window-height = 30
-macos-titlebar-proxy-icon = hidden
+# macos-titlebar-proxy-icon = hidden
 
 
 palette = 0=#1a1f2b
