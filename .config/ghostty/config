@@ -3,7 +3,7 @@ mouse-hide-while-typing = true
 scrollback-limit = 1000000
 shell-integration-features=sudo
 
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 font-family = "Iosevka Output Extended"
 
