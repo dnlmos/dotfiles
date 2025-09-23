@@ -5,7 +5,7 @@ shell-integration-features=sudo
 
 theme = Catppuccin Mocha
 
-font-family = "Iosevka Output Extended"
+font-family = "JetBrainsMono Nerd Font Mono"
 
 # variants for bold and italic styles
 font-family-bold = "Iosevka Output Extended Bold"
@@ -13,14 +13,13 @@ font-family-italic = "Iosevka Output Extended Italic"
 font-family-bold-italic = "Iosevka Output Extended Bold Italic"
 
 font-size = 16
-
 font-thicken = true
 
 cursor-style = bar
 
 # window-decoration = none
 
-confirm-close-surface = false
+confirm-close-surface = true
 clipboard-read = allow
 clipboard-write = allow
 mouse-hide-while-typing = true
@@ -48,7 +47,7 @@ palette = 13=#7a889a
 palette = 14=#2e3440
 palette = 15=#232834
 
-background = #1a1f2b
+background = #000000
 foreground = #c2c6d8
 cursor-color = #d6d9e5
 cursor-text = #1a1f2b

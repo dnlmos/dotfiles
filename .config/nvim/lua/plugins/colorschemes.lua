@@ -7,7 +7,7 @@ return {
     config = function()
       require("kanso").setup({
         bold = true,
-        italics = true,
+        italics = false,
         compile = false,
         undercurl = true,
         commentStyle = { italic = true },
@@ -42,7 +42,8 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "storm", -- Options: storm, night, moon, day
-        transparent = true,
+        transparent = false,
+        italics = false,
         styles = {
           sidebars = "transparent",
           floats = "transparent",
@@ -121,7 +122,7 @@ return {
     "vague2k/vague.nvim",
     config = function()
       require("vague").setup({
-        transparent = true,
+        transparent = false,
         italic = false
       })
     end
