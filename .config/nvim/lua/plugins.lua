@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 vim.pack.add({
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/vieitesss/gh-permalink.nvim" },
@@ -14,7 +12,10 @@ vim.pack.add({
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/chentoast/marks.nvim" },
-})
+  { src = "https://github.com/folke/persistence.nvim" },
+
+  { src = "https://github.com/rcarriga/nvim-notify" },
+}, { load = true })
 
 require('mini.ai').setup({ n_lines = 500 })
 require('mini.hipatterns').setup({
@@ -29,12 +30,12 @@ require('mini.hipatterns').setup({
 require('mini.surround').setup()
 require('mini.pairs').setup()
 require('mini.tabline').setup()
+require('mini.tabline').setup()
+require('mini.indentscope').setup()
 
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
-require('mason').setup({})
-require('mini.tabline').setup()
-require('gitsigns').setup({ signcolumn = false })
+require('mason').setup()
 require("oil").setup({
   default_file_explorer = true,
   delete_to_trash = true,
@@ -191,13 +192,68 @@ require("vague").setup({
 })
 
 require('gitsigns').setup({
-  current_line_blame = true,
-  current_line_blame_opts = {
-    virt_text = true,
-    virt_text_pos = 'right_align',
-    delay = 1000,
-    ignore_whitespace = false,
-  },
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    -- Helper: consistent keymap wrapper
+    local function map(mode, lhs, rhs, desc, opts)
+      opts = vim.tbl_extend('force', { buffer = bufnr, desc = 'GitSigns: ' .. desc }, opts or {})
+      vim.keymap.set(mode, lhs, rhs, opts)
+    end
+
+    -- === Navigation ===
+    map('n', ']h', gs.next_hunk, 'Next Hunk', { expr = true })
+    map('n', '[h', gs.prev_hunk, 'Prev Hunk', { expr = true })
+
+    -- === Actions: Hunk ===
+    map('n', '<leader>hs', gs.stage_hunk, 'Stage Hunk')
+    map('n', '<leader>hr', gs.reset_hunk, 'Reset Hunk')
+    map('v', '<leader>hs', function()
+      gs.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+    end, 'Stage Selected Hunk')
+    map('v', '<leader>hr', function()
+      gs.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+    end, 'Reset Selected Hunk')
+
+    -- === Actions: Buffer ===
+    map('n', '<leader>hS', gs.stage_buffer, 'Stage Buffer')
+    map('n', '<leader>hR', gs.reset_buffer, 'Reset Buffer')
+    map('n', '<leader>hu', gs.undo_stage_hunk, 'Undo Stage Hunk')
+
+    -- === Preview & Info ===
+    map('n', '<leader>hp', gs.preview_hunk, 'Preview Hunk')
+    map('n', '<leader>hb', function() gs.blame_line({ full = true }) end,
+      'Blame Line (Full)')
+    map('n', '<leader>hB', gs.toggle_current_line_blame, 'Toggle Line Blame')
+
+    -- === Diff ===
+    map('n', '<leader>hd', gs.diffthis, 'Diff This')
+    map('n', '<leader>hD', function() gs.diffthis('~') end, 'Diff This ~')
+
+    -- === Text Objects ===
+    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', 'Select Hunk (ih)', { silent = true })
+
+    -- === Optional: Quick jump with repeat ===
+    vim.schedule(function()
+      if vim.fn.maparg(']h', 'n') == '' then
+        vim.keymap.set('n', ']h', function()
+          if vim.wo.diff then return ']c' end
+          vim.schedule(function() gs.next_hunk() end)
+          return '<Ignore>'
+        end, { expr = true, buffer = bufnr, desc = 'GitSigns: Next Hunk or ]c' })
+      end
+
+      if vim.fn.maparg('[h', 'n') == '' then
+        vim.keymap.set('n', '[h', function()
+          if vim.wo.diff then return '[c' end
+          vim.schedule(function() gs.prev_hunk() end)
+          return '<Ignore>'
+        end, { expr = true, buffer = bufnr, desc = 'GitSigns: Prev Hunk or [c' })
+      end
+    end)
+  end,
 })
 
 require("marks").setup({})
+require("persistence").setup({})
+require("fzf-lua").setup({})
