@@ -29,22 +29,22 @@ return { -- Collection of various small independent plugins/modules
     -- - sr)' - [S]urround [R]eplace [)] [']
     require("mini.surround").setup()
 
-    -- Configure mini.diff
-    require("mini.diff").setup({
-      view = {
-        style = "sign",
-        signs = {
-          add = "▎",
-          change = "▎",
-          delete = "",
-        },
-      },
-    })
-
-    -- Set keybinding for toggling mini.diff overlay
-    vim.keymap.set('n', '<leader>go', function()
-      require("mini.diff").toggle_overlay(0)
-    end, { desc = "Toggle mini.diff overlay" })
+    -- -- Configure mini.diff
+    -- require("mini.diff").setup({
+    --   view = {
+    --     style = "sign",
+    --     signs = {
+    --       add = "▎",
+    --       change = "▎",
+    --       delete = "",
+    --     },
+    --   },
+    -- })
+    --
+    -- -- Set keybinding for toggling mini.diff overlay
+    -- vim.keymap.set('n', '<leader>go', function()
+    --   require("mini.diff").toggle_overlay(0)
+    -- end, { desc = "Toggle mini.diff overlay" })
 
     require("mini.pairs").setup() -- Autopairs
   end,
