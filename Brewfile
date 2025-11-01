@@ -31,6 +31,7 @@ brew "imagemagick"
 brew "pandoc"
 brew "jupyterlab"
 brew "eza"
+brew "git-delta"
 
 cask "aerospace"
 cask "coteditor"
