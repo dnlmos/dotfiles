@@ -1,8 +1,8 @@
-require 'plugins'
 require 'configs'
+require 'plugins'
+require 'mini-starter'
 require 'lsp'
 require 'keymaps'
 require 'autocmds'
-require 'umbraline'
 
 vim.cmd("colorscheme vague")
