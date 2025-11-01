@@ -47,5 +47,5 @@ unset __conda_setup
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/danielm/.lmstudio/bin"
 export XDG_CONFIG_HOME="/Users/danielm/.config"
-
+export EDITOR="nvim"
 export PATH="$PATH:/Users/danielm/.cargo/bin"
