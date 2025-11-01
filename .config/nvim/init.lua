@@ -1,10 +1,8 @@
-require("config.options")
-require("core.lazy")
-require("core.lsp")
-require("config.autocmds")
-require("config.keymaps")
+require 'plugins'
+require 'configs'
+require 'lsp'
+require 'keymaps'
+require 'autocmds'
+require 'umbraline'
 
--- Set theme
-
--- Load the colorscheme
 vim.cmd("colorscheme vague")

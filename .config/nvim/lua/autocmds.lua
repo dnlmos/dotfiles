@@ -1,3 +1,9 @@
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+local map = vim.keymap.set
+local bs = { buffer = true, silent = true }
+local brs = { buffer = true, remap = true, silent = true }
+
 -- File: lua/core/autocmds.lua
 local M = {}
 
