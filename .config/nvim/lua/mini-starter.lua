@@ -23,12 +23,6 @@ local items = vim.list_extend({
   starter.sections.recent_files(10, true),
 }, custom_items)
 
--- Add Sessions last
-vim.list_extend(items, {
-  section_item("Restore Last Session", "lua require('persistence').load({ last = true })", "Sessions"),
-  section_item("Select Session", "lua require('persistence').select()", "Sessions"),
-})
-
 starter.setup({
   items = items,
 

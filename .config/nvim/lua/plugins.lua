@@ -12,9 +12,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/chentoast/marks.nvim" },
-  { src = "https://github.com/folke/persistence.nvim" },
-
-  { src = "https://github.com/rcarriga/nvim-notify" },
+  { src = "https://github.com/rmagatti/auto-session" },
 }, { load = true })
 
 require('mini.ai').setup({ n_lines = 500 })
@@ -192,6 +190,7 @@ require("vague").setup({
 })
 
 require('gitsigns').setup({
+  signcolumn = false,
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 
@@ -255,5 +254,6 @@ require('gitsigns').setup({
 })
 
 require("marks").setup({})
-require("persistence").setup({})
 require("fzf-lua").setup({})
+require("auto-session").setup({ auto_restore = false })
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
