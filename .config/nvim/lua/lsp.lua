@@ -18,7 +18,10 @@ vim.diagnostic.config({
     severity_sort = true,
 })
 
-vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
+vim.pack.add(
+    { "https://github.com/nvim-treesitter/nvim-treesitter" },
+    { confirm = false }
+)
 
 -- equivalent to :TSUpdate
 require("nvim-treesitter.install").update("all")
@@ -79,13 +82,13 @@ require("blink.cmp").setup({
     },
     completion = {
         menu = {
-            border = 'single',
+            border = "single",
             scrolloff = 1,
             scrollbar = false,
             draw = {
                 columns = {
                     { "kind_icon" },
-                    { "label",      "label_description", gap = 1 },
+                    { "label", "label_description", gap = 1 },
                     { "kind" },
                     { "source_name" },
                 },
@@ -93,7 +96,7 @@ require("blink.cmp").setup({
         },
         documentation = {
             window = {
-                border = 'rounded',
+                border = "rounded",
                 scrollbar = false,
                 winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,EndOfBuffer:BlinkCmpDoc",
             },
@@ -111,7 +114,7 @@ local lsp_servers = {
     lua_ls = {
         Lua = {
             workspace = {
-                library = vim.api.nvim_get_runtime_file('', true)
+                library = vim.api.nvim_get_runtime_file("", true),
             },
         },
     },
@@ -126,11 +129,13 @@ vim.pack.add({
     -- NOTE: if you'd rather install the lsps through your OS package manager you
     -- can delete the next three mason-related lines and their setup calls below.
     -- see `:h lsp-quickstart` for more details.
-    "https://github.com/mason-org/mason.nvim",                     -- package manager
-    "https://github.com/mason-org/mason-lspconfig.nvim",           -- lspconfig bridge
-    "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" -- auto installer
+    "https://github.com/mason-org/mason.nvim", -- package manager
+    "https://github.com/mason-org/mason-lspconfig.nvim", -- lspconfig bridge
+    "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- auto installer
 }, { confirm = false })
 
+-- Mason (LSP installer)
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
@@ -146,31 +151,39 @@ for server, config in pairs(lsp_servers) do
 
         -- only create the keymaps if the server attaches successfully
         on_attach = function(_, bufnr)
-            vim.keymap.set("n", "grd", vim.lsp.buf.definition,
-                { buffer = bufnr, desc = "vim.lsp.buf.definition()", })
+            vim.keymap.set(
+                "n",
+                "grd",
+                vim.lsp.buf.definition,
+                { buffer = bufnr, desc = "vim.lsp.buf.definition()" }
+            )
 
-            vim.keymap.set("n", "<leader>f", vim.lsp.buf.format,
-                { buffer = bufnr, desc = "LSP: [F]ormat Document", })
+            vim.keymap.set(
+                "n",
+                "<leader>f",
+                vim.lsp.buf.format,
+                { buffer = bufnr, desc = "LSP: [F]ormat Document" }
+            )
         end,
     })
 end
 
-vim.pack.add({"https://github.com/stevearc/conform.nvim"})
+vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
-    notify_on_error = false,
+    notify_on_error = true,
     formatters_by_ft = {
-      lua = { "stylua" },
-      rust = { "rustfmt", lsp_format = "fallback" },
-      python = {
-        -- To fix auto-fixable lint errors.
-        "ruff_fix",
-        -- To run the Ruff formatter.
-        "ruff_format",
-        -- To organize the imports.
-        "ruff_organize_imports",
-      },
-      --
-      -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        lua = { "stylua" },
+        rust = { "rustfmt", lsp_format = "fallback" },
+        python = {
+            -- To fix auto-fixable lint errors.
+            "ruff_fix",
+            -- To run the Ruff formatter.
+            "ruff_format",
+            -- To organize the imports.
+            "ruff_organize_imports",
+        },
+        --
+        -- You can use 'stop_after_first' to run the first available formatter from the list
+        -- javascript = { "prettierd", "prettier", stop_after_first = true },
     },
 })
