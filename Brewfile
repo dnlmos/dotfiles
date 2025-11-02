@@ -32,6 +32,7 @@ brew "pandoc"
 brew "jupyterlab"
 brew "eza"
 brew "git-delta"
+brew "stylua"
 
 cask "aerospace"
 cask "coteditor"
