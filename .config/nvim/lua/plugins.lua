@@ -3,16 +3,18 @@ vim.pack.add({
   { src = "https://github.com/vieitesss/gh-permalink.nvim" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/saghen/blink.cmp",           version = vim.version.range("^1") },
+  { src = "https://github.com/saghen/blink.cmp",                   version = vim.version.range("^1") },
   { src = "https://github.com/tpope/vim-fugitive" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
-  { src = "https://github.com/vague2k/vague.nvim" },
+  { src = "https://github.com/vague2k/vague.nvim" }, -- Colorscheme
   { src = "https://github.com/nvim-mini/mini.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/chentoast/marks.nvim" },
   { src = "https://github.com/rmagatti/auto-session" },
+  { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+  { src = "https://github.com/j-hui/fidget.nvim" }, -- LSP info bottom right
 }, { load = true })
 
 require('mini.ai').setup({ n_lines = 500 })
@@ -29,7 +31,26 @@ require('mini.surround').setup()
 require('mini.pairs').setup()
 require('mini.tabline').setup()
 require('mini.tabline').setup()
-require('mini.indentscope').setup()
+require("ibl").setup({
+  scope = {
+    enabled = true,
+    show_exact_scope = true,
+  },
+  exclude = {
+    filetypes = {
+      "dashboard",
+      "lazy",
+      "help",
+      "terminal",
+      "TelescopePrompt",
+    },
+    buftypes = {
+      "nofile",
+      "quickfix",
+      "prompt",
+    },
+  },
+})
 
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 
@@ -254,6 +275,7 @@ require('gitsigns').setup({
 })
 
 require("marks").setup({})
-require("fzf-lua").setup({})
+require("fzf-lua").setup()
 require("auto-session").setup({ auto_restore = false })
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+require("fidget").setup({})
