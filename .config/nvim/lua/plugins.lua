@@ -16,7 +16,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-lualine/lualine.nvim" }, -- Statusline
     { src = "https://github.com/chentoast/marks.nvim" }, -- Marks
     { src = "https://github.com/rmagatti/auto-session" }, -- Session manager
-    { src = "https://github.com/lukas-reineke/indent-blankline.nvim" }, -- Indent guides
+    { src = "https://github.com/saghen/blink.indent" }, -- Indent guides
     { src = "https://github.com/j-hui/fidget.nvim" }, -- LSP progress
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- Markdown render
 }, { load = true })
@@ -47,21 +47,6 @@ require("mini.hipatterns").setup({
 require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.tabline").setup()
-
--- Indent guides
-require("ibl").setup({
-    scope = { enabled = true, show_exact_scope = true },
-    exclude = {
-        filetypes = {
-            "dashboard",
-            "lazy",
-            "help",
-            "terminal",
-            "TelescopePrompt",
-        },
-        buftypes = { "nofile", "quickfix", "prompt" },
-    },
-})
 
 -- Oil (file manager)
 require("oil").setup({
