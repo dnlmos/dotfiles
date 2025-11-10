@@ -4,10 +4,6 @@ vim.pack.add({
     { src = "https://github.com/vieitesss/gh-permalink.nvim" }, -- GitHub permalink
     { src = "https://github.com/ibhagwan/fzf-lua" }, -- Fuzzy finder
     { src = "https://github.com/lewis6991/gitsigns.nvim" }, -- Git signs
-    {
-        src = "https://github.com/saghen/blink.cmp",
-        version = vim.version.range("^1"),
-    }, -- Completion
     { src = "https://github.com/tpope/vim-fugitive" }, -- Git wrapper
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- Lua utils
     { src = "https://github.com/stevearc/oil.nvim" }, -- File manager
