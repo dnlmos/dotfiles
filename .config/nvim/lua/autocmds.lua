@@ -1,26 +1,9 @@
-local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.api.nvim_create_augroup
-local map = vim.keymap.set
-local bs = { buffer = true, silent = true }
-local brs = { buffer = true, remap = true, silent = true }
-
--- File: lua/core/autocmds.lua
 local M = {}
 
 -- Utility to create augroups with a consistent prefix
 local function augroup(name)
     return vim.api.nvim_create_augroup("danielm_" .. name, { clear = true })
 end
-
--- Resize splits when the window is resized
-vim.api.nvim_create_autocmd("VimResized", {
-    group = augroup("resize_splits"),
-    callback = function()
-        local current_tab = vim.fn.tabpagenr()
-        vim.cmd("tabdo wincmd =")
-        vim.cmd("tabnext " .. current_tab)
-    end,
-})
 
 -- Go to last cursor location when reopening file
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -86,6 +69,15 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Open help in vertical split
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("help_vertical"),
+    pattern = { "help" },
+    callback = function()
+        vim.cmd("wincmd L")
+    end,
+})
+
 -- Enable wrap and spell check in text-related filetypes
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("wrap_spell"),
@@ -93,6 +85,15 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.opt_local.wrap = true
         vim.opt_local.spell = true
+    end,
+})
+
+-- Disable spell checking for markdown in LSP hover windows
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("markdown_no_spell"),
+    pattern = { "markdown" },
+    callback = function()
+        vim.opt_local.spell = false
     end,
 })
 
@@ -118,6 +119,23 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- No auto continue comments on new line
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("no_auto_comment"),
+    callback = function()
+        vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+    end,
+})
+
+-- Syntax highlighting for dotenv files
+vim.api.nvim_create_autocmd("BufRead", {
+    group = augroup("dotenv_ft"),
+    pattern = { ".env", ".env.*" },
+    callback = function()
+        vim.bo.filetype = "dosini"
+    end,
+})
+
 -- Auto-create directories on save
 vim.api.nvim_create_autocmd("BufWritePre", {
     group = augroup("auto_create_dir"),
@@ -133,25 +151,99 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Close neotree before saving session
 vim.api.nvim_create_autocmd("User", {
+    group = augroup("persistence_save"),
     pattern = "PersistenceSavePre",
     callback = function()
-        vim.cmd(":Neotree close")
+        vim.cmd("Neotree close")
+    end,
+})
+
+-- Oil: auto-preview on enter
+vim.api.nvim_create_autocmd("User", {
+    group = augroup("oil_preview"),
+    pattern = "OilEnter",
+    callback = vim.schedule_wrap(function(args)
+        local oil = require("oil")
+        if
+            vim.api.nvim_get_current_buf() == args.data.buf
+            and oil.get_cursor_entry()
+        then
+            oil.open_preview()
+        end
+    end),
+})
+
+-- Auto resize splits when the terminal's window is resized
+vim.api.nvim_create_autocmd("VimResized", {
+    group = augroup("resize_splits"),
+    callback = function()
+        vim.cmd("wincmd =")
+    end,
+})
+
+-- Show cursorline only in active window
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+    group = augroup("active_cursorline"),
+    callback = function()
+        vim.opt_local.cursorline = true
+    end,
+})
+
+vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+    group = augroup("active_cursorline"),
+    callback = function()
+        vim.opt_local.cursorline = false
+    end,
+})
+
+-- LSP: Highlight references under cursor
+vim.api.nvim_create_autocmd("CursorMoved", {
+    group = vim.api.nvim_create_augroup(
+        "LspReferenceHighlight",
+        { clear = true }
+    ),
+    desc = "Highlight references under cursor",
+    callback = function()
+        -- Only run if the cursor is not in insert mode
+        if vim.fn.mode() ~= "i" then
+            local clients = vim.lsp.get_clients({ bufnr = 0 })
+            local supports_highlight = false
+            for _, client in ipairs(clients) do
+                if client.server_capabilities.documentHighlightProvider then
+                    supports_highlight = true
+                    break -- Found a supporting client, no need to check others
+                end
+            end
+
+            -- 3. Proceed only if an LSP is active AND supports the feature
+            if supports_highlight then
+                vim.lsp.buf.clear_references()
+                vim.lsp.buf.document_highlight()
+            end
+        end
+    end,
+})
+
+-- ide like highlight when stopping cursor
+vim.api.nvim_create_autocmd("CursorMovedI", {
+    group = "LspReferenceHighlight",
+    desc = "Clear highlights when entering insert mode",
+    callback = function()
+        vim.lsp.buf.clear_references()
     end,
 })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    group = vim.api.nvim_create_augroup(
-        "kickstart-highlight-yank",
-        { clear = true }
-    ),
+    group = augroup("highlight_yank"),
+    pattern = "*",
+    desc = "Highlight selection on yank",
     callback = function()
-        vim.hl.on_yank()
+        vim.highlight.on_yank({ timeout = 200, visual = true })
     end,
 })
 
--- Start, Stop, Restart, Log commands {{{
+-- LSP User Commands
 vim.api.nvim_create_user_command("LspStart", function()
     vim.cmd.e()
 end, { desc = "Starts LSP clients in the current buffer" })
@@ -164,9 +256,9 @@ vim.api.nvim_create_user_command("LspStop", function(opts)
         end
     end
 end, {
-    desc = "Stop all LSP clients or a specific client attached to the current buffer.",
+    desc = "Stop all LSP clients or a specific client attached to the current buffer",
     nargs = "?",
-    complete = function(_, _, _)
+    complete = function()
         local clients = vim.lsp.get_clients({ bufnr = 0 })
         local client_names = {}
         for _, client in ipairs(clients) do
@@ -223,29 +315,6 @@ vim.api.nvim_create_user_command("LspInfo", function()
     vim.cmd("silent checkhealth vim.lsp")
 end, {
     desc = "Get all the information about all LSP attached",
-})
-
--- Disable spell checking for Markdown files by default
--- this is mainly due to annoying spell check in docs -> vim.lsp.buf.hover()
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "markdown",
-    callback = function()
-        vim.opt_local.spell = false
-    end,
-})
-
--- Oil: auto-preview on enter
-vim.api.nvim_create_autocmd("User", {
-    pattern = "OilEnter",
-    callback = vim.schedule_wrap(function(args)
-        local oil = require("oil")
-        if
-            vim.api.nvim_get_current_buf() == args.data.buf
-            and oil.get_cursor_entry()
-        then
-            oil.open_preview()
-        end
-    end),
 })
 
 return M
