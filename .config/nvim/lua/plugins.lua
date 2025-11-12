@@ -4,7 +4,6 @@ vim.pack.add({
     { src = "https://github.com/vieitesss/gh-permalink.nvim" }, -- GitHub permalink
     { src = "https://github.com/ibhagwan/fzf-lua" }, -- Fuzzy finder
     { src = "https://github.com/lewis6991/gitsigns.nvim" }, -- Git signs
-    { src = "https://github.com/tpope/vim-fugitive" }, -- Git wrapper
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- Lua utils
     { src = "https://github.com/stevearc/oil.nvim" }, -- File manager
     { src = "https://github.com/vague2k/vague.nvim" }, -- Colorscheme
@@ -184,7 +183,6 @@ require("vague").setup({ transparent = false, italic = false })
 
 -- Gitsigns (git integration)
 require("gitsigns").setup({
-    signcolumn = false,
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
         local function map(mode, lhs, rhs, desc, opts)
