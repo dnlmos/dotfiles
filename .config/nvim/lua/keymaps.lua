@@ -37,6 +37,23 @@ vim.keymap.set(
     { desc = "Clear search highlighting" }
 )
 
+-- remap redo
+vim.keymap.set("n", "U", "<C-r>")
+
+-- save and quit current file
+vim.keymap.set(
+    "n",
+    "<leader>ww",
+    ":w<cr>",
+    { silent = true, noremap = true, desc = "Write file" }
+)
+vim.keymap.set(
+    { "n", "t" },
+    "<leader>t",
+    ":q<cr>",
+    { silent = true, noremap = true, desc = "Quit" }
+)
+
 -- Plugin manager
 vim.keymap.set("n", "<leader>ps", "<cmd>lua vim.pack.update()<CR>", opts)
 
@@ -55,9 +72,6 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
-
--- Tabs
-vim.keymap.set("n", "<leader>te", "<cmd>tabnew<CR>", opts)
 
 -- Split windows
 vim.keymap.set("n", "<leader>_", "<cmd>vsplit<CR>", opts)

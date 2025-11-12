@@ -78,25 +78,6 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- Enable wrap and spell check in text-related filetypes
-vim.api.nvim_create_autocmd("FileType", {
-    group = augroup("wrap_spell"),
-    pattern = { "text", "plaintex", "typst", "gitcommit", "markdown" },
-    callback = function()
-        vim.opt_local.wrap = true
-        vim.opt_local.spell = true
-    end,
-})
-
--- Disable spell checking for markdown in LSP hover windows
-vim.api.nvim_create_autocmd("FileType", {
-    group = augroup("markdown_no_spell"),
-    pattern = { "markdown" },
-    callback = function()
-        vim.opt_local.spell = false
-    end,
-})
-
 -- Disable JSON conceal
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("json_conceal"),
@@ -106,33 +87,11 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- Fix Lua indentation
-vim.api.nvim_create_autocmd("FileType", {
-    group = augroup("fix_lua_indent"),
-    pattern = { "lua" },
-    callback = function()
-        vim.bo.indentexpr = ""
-        vim.bo.shiftwidth = 2
-        vim.bo.tabstop = 2
-        vim.bo.softtabstop = 2
-        vim.bo.expandtab = true
-    end,
-})
-
 -- No auto continue comments on new line
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup("no_auto_comment"),
     callback = function()
         vim.opt_local.formatoptions:remove({ "c", "r", "o" })
-    end,
-})
-
--- Syntax highlighting for dotenv files
-vim.api.nvim_create_autocmd("BufRead", {
-    group = augroup("dotenv_ft"),
-    pattern = { ".env", ".env.*" },
-    callback = function()
-        vim.bo.filetype = "dosini"
     end,
 })
 
@@ -146,15 +105,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         local uv = vim.uv or vim.loop
         local file = uv.fs_realpath(event.match) or event.match
         vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
-    end,
-})
-
--- Close neotree before saving session
-vim.api.nvim_create_autocmd("User", {
-    group = augroup("persistence_save"),
-    pattern = "PersistenceSavePre",
-    callback = function()
-        vim.cmd("Neotree close")
     end,
 })
 
