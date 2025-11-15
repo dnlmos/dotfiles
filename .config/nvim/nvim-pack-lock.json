@@ -81,6 +81,10 @@
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "quicker.nvim": {
+      "rev": "12a2291",
+      "src": "https://github.com/stevearc/quicker.nvim"
+    },
     "render-markdown.nvim": {
       "rev": "6a744f0",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
