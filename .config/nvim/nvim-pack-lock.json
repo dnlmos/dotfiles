@@ -37,6 +37,10 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "indent-blankline.nvim": [],
+    "kanso.nvim": {
+      "rev": "8104194",
+      "src": "https://github.com/webhooked/kanso.nvim"
+    },
     "lualine.nvim": {
       "rev": "3946f01",
       "src": "https://github.com/nvim-lualine/lualine.nvim"

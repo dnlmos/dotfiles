@@ -7,6 +7,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- Lua utils
     { src = "https://github.com/stevearc/oil.nvim" }, -- File manager
     { src = "https://github.com/vague2k/vague.nvim" }, -- Colorscheme
+    { src = "https://github.com/webhooked/kanso.nvim" }, -- Colorscheme
     { src = "https://github.com/nvim-mini/mini.nvim" }, -- Mini modules
     { src = "https://github.com/nvim-lualine/lualine.nvim" }, -- Statusline
     { src = "https://github.com/chentoast/marks.nvim" }, -- Marks
@@ -180,6 +181,30 @@ require("lualine").setup({
 
 -- Colorscheme
 require("vague").setup({ transparent = false, italic = false })
+require("kanso").setup({
+    italics = false,
+    overrides = function(colors)
+        return {
+            -- Floating window borders
+            FloatBorder = { fg = "#e2e1df", bg = "NONE" },
+
+            -- LSP hover window, signature help, etc.
+            LspInfoBorder = { fg = "#e2e1df" },
+
+            -- Popup menu (completion)
+            Pmenu = { bg = colors.bg or "NONE" },
+            PmenuBorder = { fg = "#e2e1df", bg = "NONE" },
+
+            -- Window split borders
+            WinSeparator = { fg = "#e2e1df", bg = "NONE" },
+        }
+    end,
+
+    background = {
+        dark = "zen",
+        light = "pearl",
+    },
+})
 
 -- Gitsigns (git integration)
 require("gitsigns").setup({
