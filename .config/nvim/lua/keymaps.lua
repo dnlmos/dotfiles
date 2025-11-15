@@ -282,10 +282,9 @@ vim.keymap.set("n", "<leader>cf", function()
     require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "[F]ormat buffer" })
 
--- Quickfix
-vim.keymap.set("n", "<leader>q", function()
+vim.keymap.set("n", "<leader>cq", function()
     vim.diagnostic.setloclist()
-end, { desc = "[Q]uickfix list" })
+end, { desc = "diagnostics [Q]uickfix list" })
 
 -- LSP / Code
 vim.keymap.set(
