@@ -6,6 +6,7 @@ vim.pack.add({
     { src = "https://github.com/lewis6991/gitsigns.nvim" }, -- Git signs
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- Lua utils
     { src = "https://github.com/stevearc/oil.nvim" }, -- File manager
+    { src = "https://github.com/stevearc/quicker.nvim" }, -- Enhanced quick fix
     { src = "https://github.com/vague2k/vague.nvim" }, -- Colorscheme
     { src = "https://github.com/webhooked/kanso.nvim" }, -- Colorscheme
     { src = "https://github.com/nvim-mini/mini.nvim" }, -- Mini modules
@@ -18,6 +19,7 @@ vim.pack.add({
 }, { load = true })
 
 -- Mini modules
+require("mini.icons").setup()
 require("mini.ai").setup({ n_lines = 500 })
 require("mini.hipatterns").setup({
     highlighters = {
@@ -56,11 +58,11 @@ require("oil").setup({
             return name == ".." or name == ".git"
         end,
     },
+    columns = {
+        "icon",
+    },
     float = {
         preview_split = "right",
-        padding = 2,
-        max_width = 160,
-        max_height = 40,
         win_options = {
             number = true,
             relativenumber = true,
@@ -68,7 +70,7 @@ require("oil").setup({
             cursorline = true,
         },
     },
-    win_options = { wrap = true, winblend = 0 },
+    -- win_options = { wrap = true, winblend = 0 },
     keymaps = {
         ["g?"] = { "actions.show_help", mode = "n" },
         ["<CR>"] = "actions.select",
@@ -88,6 +90,39 @@ require("oil").setup({
         ["gx"] = "actions.open_external",
         ["g."] = { "actions.toggle_hidden", mode = "n" },
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
+    },
+})
+
+vim.keymap.set("n", "<leader>q", function()
+    require("quicker").toggle()
+end, {
+    desc = "Toggle quickfix",
+})
+vim.keymap.set("n", "<leader>l", function()
+    require("quicker").toggle({ loclist = true })
+end, {
+    desc = "Toggle loclist",
+})
+require("quicker").setup({
+    keys = {
+        {
+            ">",
+            function()
+                require("quicker").expand({
+                    before = 2,
+                    after = 2,
+                    add_to_existing = true,
+                })
+            end,
+            desc = "Expand quickfix context",
+        },
+        {
+            "<",
+            function()
+                require("quicker").collapse()
+            end,
+            desc = "Collapse quickfix context",
+        },
     },
 })
 

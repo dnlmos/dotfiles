@@ -157,13 +157,6 @@ for server, config in pairs(lsp_servers) do
                 vim.lsp.buf.definition,
                 { buffer = bufnr, desc = "vim.lsp.buf.definition()" }
             )
-
-            vim.keymap.set(
-                "n",
-                "<leader>f",
-                vim.lsp.buf.format,
-                { buffer = bufnr, desc = "LSP: [F]ormat Document" }
-            )
         end,
     })
 end
