@@ -110,18 +110,35 @@ require("blink.cmp").setup({
 
 -- lsp servers we want to use and their configuration
 -- see `:h lspconfig-all` for available servers and their settings
-local lsp_servers = {
-    lua_ls = {
-        Lua = {
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-        },
-    },
-    clangd = {},
-    rust_analyzer = {},
-    gopls = {},
-}
+-- local lsp_servers = {
+--     lua_ls = {
+--         Lua = {
+--             workspace = {
+--                 library = vim.api.nvim_get_runtime_file("", true),
+--             },
+--         },
+--     },
+--     clangd = {},
+--     rust_analyzer = {},
+--     gopls = {},
+-- }
+
+local function load_lsp_configs(path)
+    local filenames = vim.fn.readdir(path)
+    local servers = {}
+
+    for _, filename in ipairs(filenames) do
+        local name = filename:match("(.+)%..+$") or filename
+        local ok, cfg = pcall(require, "lsp." .. name)
+
+        servers[name] = ok and cfg or {}
+    end
+
+    return servers
+end
+
+local lsp_dir = vim.fn.stdpath("config") .. "/lsp"
+local lsp_servers = load_lsp_configs(lsp_dir)
 
 vim.pack.add({
     "https://github.com/neovim/nvim-lspconfig", -- default configs for lsps
