@@ -1,5 +1,4 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/dockerls.lua
----@type vim.lsp.Config
 return {
     cmd = {
         "docker-langserver",
