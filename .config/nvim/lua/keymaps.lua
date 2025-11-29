@@ -120,14 +120,6 @@ vim.keymap.set(
     { desc = "Toggle autosave" }
 )
 
--- Change directory to current file
-vim.keymap.set(
-    "n",
-    "<leader>cd",
-    '<cmd>lua vim.fn.chdir(vim.fn.expand("%:p:h"))<CR>',
-    opts
-)
-
 -- Window navigation (Ctrl + hjkl)
 vim.keymap.set(
     "n",
@@ -282,10 +274,6 @@ vim.keymap.set("n", "<leader>cf", function()
     require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "[F]ormat buffer" })
 
-vim.keymap.set("n", "<leader>cq", function()
-    vim.diagnostic.setloclist()
-end, { desc = "diagnostics [Q]uickfix list" })
-
 -- LSP / Code
 vim.keymap.set(
     "n",
@@ -294,12 +282,6 @@ vim.keymap.set(
     { desc = "Code Actions" }
 )
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
-vim.keymap.set(
-    "n",
-    "<leader>cd",
-    vim.diagnostic.open_float,
-    { desc = "Show diagnostics (float)" }
-)
 
 local fzf = require("fzf-lua")
 
@@ -435,13 +417,22 @@ vim.keymap.set(
 )
 
 -- Quickfix / Location list
-vim.keymap.set("n", "<leader>fq", fzf.quickfix, { desc = "[F]ind [Q]uickfix" })
-vim.keymap.set(
-    "n",
-    "<leader>fl",
-    fzf.loclist,
-    { desc = "[F]ind [L]ocation list" }
-)
+vim.keymap.set("n", "<leader>cq", function()
+    require("quicker").toggle()
+end, { desc = "[quicker] Toggle quickfix list" })
+
+vim.keymap.set("n", "<leader>cl", function()
+    require("quicker").toggle({ loclist = true })
+end, { desc = "[quicker] Toggle location list" })
+
+vim.keymap.set("n", "<leader>cd", function()
+    local q = require("quicker")
+    if q.is_open() then
+        q.close()
+    else
+        vim.diagnostic.setqflist()
+    end
+end, { desc = "[quicker] Toggle diagnostics in quickfix" })
 
 -- GitHub permalink
 vim.keymap.set({ "n", "x" }, "<leader>gy", function()
