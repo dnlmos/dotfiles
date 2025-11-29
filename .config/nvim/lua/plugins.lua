@@ -7,8 +7,10 @@ vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" }, -- Lua utils
     { src = "https://github.com/stevearc/oil.nvim" }, -- File manager
     { src = "https://github.com/stevearc/quicker.nvim" }, -- Enhanced quick fix
+
     { src = "https://github.com/vague2k/vague.nvim" }, -- Colorscheme
     { src = "https://github.com/webhooked/kanso.nvim" }, -- Colorscheme
+
     { src = "https://github.com/nvim-mini/mini.nvim" }, -- Mini modules
     { src = "https://github.com/nvim-lualine/lualine.nvim" }, -- Statusline
     { src = "https://github.com/chentoast/marks.nvim" }, -- Marks
@@ -16,6 +18,8 @@ vim.pack.add({
     { src = "https://github.com/saghen/blink.indent" }, -- Indent guides
     { src = "https://github.com/j-hui/fidget.nvim" }, -- LSP progress
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- Markdown render
+
+    { src = "https://github.com/m4xshen/hardtime.nvim" }, -- Break bad habits
 }, { load = true })
 
 -- Mini modules
@@ -93,16 +97,6 @@ require("oil").setup({
     },
 })
 
-vim.keymap.set("n", "<leader>q", function()
-    require("quicker").toggle()
-end, {
-    desc = "Toggle quickfix",
-})
-vim.keymap.set("n", "<leader>l", function()
-    require("quicker").toggle({ loclist = true })
-end, {
-    desc = "Toggle loclist",
-})
 require("quicker").setup({
     keys = {
         {
@@ -340,3 +334,5 @@ require("fidget").setup({})
 
 -- Markdown rendering
 require("render-markdown").setup({})
+
+require("hardtime").setup()
