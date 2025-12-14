@@ -209,7 +209,10 @@ require("lualine").setup({
 })
 
 -- Colorscheme
-require("vague").setup({ transparent = false, italic = false })
+require("vague").setup({
+    transparent = false,
+    italic = false,
+})
 require("kanso").setup({
     italics = false,
     overrides = function(colors)
