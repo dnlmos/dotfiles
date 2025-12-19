@@ -19,6 +19,8 @@ vim.pack.add({
     { src = "https://github.com/j-hui/fidget.nvim" }, -- LSP progress
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }, -- Markdown render
 
+    { src = "https://github.com/mrcjkb/rustaceanvim" },
+
     { src = "https://github.com/m4xshen/hardtime.nvim" }, -- Break bad habits
 }, { load = true })
 
