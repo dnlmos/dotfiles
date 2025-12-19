@@ -416,6 +416,18 @@ vim.keymap.set(
     { desc = "[C]ommand [R]ecent" }
 )
 
+vim.keymap.set(
+    "n",
+    "<leader>df",
+    vim.diagnostic.open_float,
+    { desc = "Open floating diagnostic message" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>dl",
+    vim.diagnostic.setloclist,
+    { desc = "Open diagnostics list" }
+)
 -- Quickfix / Location list
 vim.keymap.set("n", "<leader>cq", function()
     require("quicker").toggle()
