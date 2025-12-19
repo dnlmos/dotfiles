@@ -214,6 +214,38 @@ require("lualine").setup({
 require("vague").setup({
     transparent = false,
     italic = false,
+    colors = {
+        -- Background & UI
+        bg = "#050505", -- Deep "OLED" black
+        inactiveBg = "#121214", -- Subtle distinction for inactive windows
+        fg = "#e0e0e0", -- Brightened foreground for better legibility
+        floatBorder = "#4a4a4a", -- Dimmed border to keep focus on code
+        line = "#1a1a1c", -- Subtle cursor line
+        visual = "#32323c", -- Clearer selection block
+
+        -- Syntax (Enhanced Saturation)
+        comment = "#72728a", -- Lifted for better readability on black
+        builtin = "#98d1ce", -- Crisper cyan
+        func = "#e68a8a", -- Warm, distinct red/pink
+        string = "#f0c699", -- Bright peach/orange
+        number = "#f5b369", -- More vivid gold
+        property = "#d1d1e0", -- Near-white lavender
+        constant = "#b7b7e5", -- Soft but clear purple
+        parameter = "#ccabd1", -- Distinct lilac
+
+        -- Logic & Types
+        operator = "#9cb1c9", -- Cool steel blue
+        keyword = "#82b3d9", -- Classic high-contrast blue
+        type = "#a6c8d1", -- Minty teal
+
+        -- Status & Git
+        error = "#f46d78",
+        warning = "#f8c58c",
+        hint = "#89a4f0",
+        search = "#2e425a",
+        plus = "#98be65",
+        delta = "#f8c58c",
+    },
 })
 require("kanso").setup({
     italics = false,
