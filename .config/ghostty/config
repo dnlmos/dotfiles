@@ -6,13 +6,13 @@ shell-integration-features=sudo
 theme = Catppuccin Mocha
 
 #font-family = "JetBrainsMono Nerd Font Mono"
-font-family = "CommitMono"
-
+#font-family = "CommitMono"
+font-family = "Iosevka Output Extended"
 # variants for bold and italic styles
 font-family-bold = "Iosevka Output Extended Bold"
 font-family-italic = "Iosevka Output Extended Italic"
 font-family-bold-italic = "Iosevka Output Extended Bold Italic"
-
+# background-opacity = 0.95
 font-size = 16
 font-thicken = true
 
