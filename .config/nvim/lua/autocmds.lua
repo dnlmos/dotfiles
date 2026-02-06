@@ -273,4 +273,5 @@ vim.api.nvim_create_autocmd("CursorHold", {
         vim.diagnostic.open_float(nil, { focusable = true, source = "if_many" })
     end,
 })
+
 return M

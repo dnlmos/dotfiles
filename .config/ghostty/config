@@ -12,8 +12,9 @@ font-family = "Iosevka Output Extended"
 font-family-bold = "Iosevka Output Extended Bold"
 font-family-italic = "Iosevka Output Extended Italic"
 font-family-bold-italic = "Iosevka Output Extended Bold Italic"
-# background-opacity = 0.95
-font-size = 16
+#background-opacity = 0.95
+#background-blur = 20
+font-size = 14
 font-thicken = true
 
 cursor-style = bar
@@ -31,26 +32,25 @@ window-height = 30
 # macos-titlebar-proxy-icon = hidden
 
 
-palette = 0=#1a1f2b
-palette = 1=#D87C7C
-palette = 2=#88d1a2
-palette = 3=#e4d67c
-palette = 4=#7ba7df
-palette = 5=#c19cd2
-palette = 6=#96d5e5
-palette = 7=#c2c6d8
-palette = 8=#4b5568
-palette = 9=#D87C7C
-palette = 10=#deb974
-palette = 11=#d6d9e5
-palette = 12=#eff1f5
-palette = 13=#7a889a
-palette = 14=#2e3440
-palette = 15=#232834
+palette = 0=#090E13
+palette = 1=#c4746e
+palette = 2=#8a9a7b
+palette = 3=#c4b28a
+palette = 4=#8ba4b0
+palette = 5=#a292a3
+palette = 6=#8ea4a2
+palette = 7=#a4a7a4
+palette = 8=#5C6066
+palette = 9=#e46876
+palette = 10=#87a987
+palette = 11=#e6c384
+palette = 12=#7fb4ca
+palette = 13=#938aa9
+palette = 14=#7aa89f
+palette = 15=#c5c9c7
 
-background = #141415
-foreground = #c2c6d8
-cursor-color = #d6d9e5
-cursor-text = #1a1f2b
-selection-background = #4b5568
-selection-foreground = #c2c6d8
+background = #090E13
+foreground = #c5c9c7
+cursor-color = #c5c9c7
+selection-background = #22262D
+selection-foreground = #c5c9c7

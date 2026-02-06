@@ -10,6 +10,7 @@ vim.pack.add({
 
     { src = "https://github.com/vague2k/vague.nvim" }, -- Colorscheme
     { src = "https://github.com/webhooked/kanso.nvim" }, -- Colorscheme
+    { src = "https://github.com/oskarnurm/koda.nvim" }, -- Colorscheme
 
     { src = "https://github.com/nvim-mini/mini.nvim" }, -- Mini modules
     { src = "https://github.com/nvim-lualine/lualine.nvim" }, -- Statusline
@@ -245,6 +246,7 @@ require("vague").setup({
         delta = "#f8c58c",
     },
 })
+
 require("kanso").setup({
     italics = false,
     overrides = function(colors)
@@ -269,6 +271,8 @@ require("kanso").setup({
         light = "pearl",
     },
 })
+
+require("koda").setup({})
 
 -- Gitsigns (git integration)
 require("gitsigns").setup({
