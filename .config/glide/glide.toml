@@ -1,0 +1,12 @@
+[settings]
+default_keys = true
+# do not focus the window under the mouse as it moves
+focus_follows_mouse = false
+
+# activate glide on each space
+default_disable = false
+
+animate = false
+
+[settings.experimental]
+status_icon.space_index = true
