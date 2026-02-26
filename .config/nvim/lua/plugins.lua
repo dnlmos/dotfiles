@@ -12,6 +12,8 @@ vim.pack.add({
     { src = "https://github.com/webhooked/kanso.nvim" }, -- Colorscheme
     { src = "https://github.com/oskarnurm/koda.nvim" }, -- Colorscheme
 
+    { src = "https://github.com/mattmorgis/git-statusline.nvim" },
+
     { src = "https://github.com/nvim-mini/mini.nvim" }, -- Mini modules
     { src = "https://github.com/nvim-lualine/lualine.nvim" }, -- Statusline
     { src = "https://github.com/chentoast/marks.nvim" }, -- Marks
@@ -193,7 +195,13 @@ require("lualine").setup({
             { "diff" },
             { "searchcount" },
         },
-        lualine_x = { "encoding", "branch" },
+        lualine_x = {
+            -- "encoding",
+            -- "branch",
+            function()
+                return require("git_statusline").get(0)
+            end,
+        },
         lualine_y = { "progress" },
         lualine_z = {},
     },
