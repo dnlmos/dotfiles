@@ -74,6 +74,3 @@ vim.cmd.filetype("plugin indent on")
 -- Global variables
 vim.g.netrw_liststyle = 1
 vim.g.netrw_sort_by = "size"
-
--- UI extensions
-require("vim._extui").enable({})
