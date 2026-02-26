@@ -1,28 +1,50 @@
 return {
-  cmd = {
-    "lua-language-server",
-  },
-  filetypes = {
-    "lua",
-  },
-  root_markers = {
-    ".git",
-    ".luacheckrc",
-    ".luarc.json",
-    ".luarc.jsonc",
-    ".stylua.toml",
-    "selene.toml",
-    "selene.yml",
-    "stylua.toml",
-  },
-  -- settings = {
-  --     Lua = {
-  --         diagnostics = {
-  --             --     disable = { "missing-parameters", "missing-fields" },
-  --         },
-  --     },
-  -- },
+    cmd = {
+        "lua-language-server",
+    },
+    filetypes = {
+        "lua",
+    },
+    root_markers = {
+        ".git",
+        ".luacheckrc",
+        ".luarc.json",
+        ".luarc.jsonc",
+        ".stylua.toml",
+        "selene.toml",
+        "selene.yml",
+        "stylua.toml",
+    },
+    settings = {
+        Lua = {
+            completion = {
+                callSnippet = "Replace", -- neodev.nvim completion
+                showWord = "Disable", -- disable word suggestion of lsp
+            },
+            diagnostics = {
+                disable = {
+                    "missing-parameter", -- disable diagnostics about whether all fields are filled
+                    "missing-fields",
+                    "unused-function",
+                },
+                globals = { "vim", "Snacks" }, -- recognize 'vim' global to language server
+                undefined_global = false,
+            },
+            workspace = {
+                ignoreDir = { ".git" },
+                checkThirdParty = false,
+                library = {
+                    -- vim.env.VIMRUNTIME,
+                    -- vim.api.nvim_get_runtime_file('lua',true),
 
-  single_file_support = true,
-  log_level = vim.lsp.protocol.MessageType.Warning,
+                    -- `lazydev` imports vim.env.VIMRUNTIME automatically in `library` field.
+                    -- so you don't need to set in `library` field with `lazydev`
+                    -- it loads libraries which is what you declared in lua file using `require()` function when it detects.
+                    -- it is very convenient to write neovim lua plugins.
+                    -- plus, If you add source 'lazydev' in nvim-cmp, it suggests the installed plugin names in `require()`
+                },
+            },
+        },
+        single_file_support = false,
+    },
 }

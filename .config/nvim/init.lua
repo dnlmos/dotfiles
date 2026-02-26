@@ -1,10 +1,8 @@
-require("config.options")
-require("core.lazy")
-require("core.lsp")
-require("config.autocmds")
-require("config.keymaps")
+require("configs")
+require("plugins")
+require("mini-starter")
+require("lsp")
+require("keymaps")
+require("autocmds")
 
--- Set theme
-
--- Load the colorscheme
-vim.cmd("colorscheme vague")
+vim.cmd("colorscheme koda")
