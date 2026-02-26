@@ -5,4 +5,4 @@ require("lsp")
 require("keymaps")
 require("autocmds")
 
-vim.cmd("colorscheme kanso")
+vim.cmd("colorscheme koda")
