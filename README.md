@@ -1,21 +1,21 @@
-# 🛠️ My Dotfiles
+# My dotfiles
 
 > Personal configuration files and scripts to set up a development environment from scratch.
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup instructions
 
 This repository uses [`GNU stow`](https://www.gnu.org/software/stow/) to manage dotfile symlinks cleanly and modularly.
 
-### 1. 📥 Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/dnlmos/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
-### 2. 🔗 Stow the Dotfiles
+### 2. Stow the dotfiles
 ```bash
 stow .
 ```
