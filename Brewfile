@@ -8,6 +8,8 @@ tap "sst/tap"
 tap "supersonic-app/supersonic"
 tap "zegervdv/zathura"
 
+brew "zoxide"
+brew "sesh"
 brew "libtiff"
 brew "jpeg-xl"
 brew "basedpyright"
