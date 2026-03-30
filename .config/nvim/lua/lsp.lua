@@ -50,6 +50,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.pack.add({ "https://github.com/saghen/blink.cmp" }, { confirm = false })
 
 require("blink.cmp").setup({
+    fuzzy = { implementation = "lua" },
     signature = { enabled = true },
     appearance = {
         use_nvim_cmp_as_default = false,
