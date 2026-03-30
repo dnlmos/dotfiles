@@ -4,4 +4,5 @@ require("lsp")
 require("keymaps")
 require("autocmds")
 
-vim.cmd("colorscheme koda")
+-- use defualt colorscheme for now
+-- vim.cmd("colorscheme koda")

@@ -1,9 +1,7 @@
-# Modular Neovim Configuration
+# Neovim Configuration
 
-Modular Neovim configuration based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+Prerequisites: `tree-sitter-cli`, ...
 
-## Preview
-
-![Preview 0](preview0.png)
+![Preview 0](preview_0.png)
 
 
