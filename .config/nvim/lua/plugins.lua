@@ -380,4 +380,5 @@ vim.o.sessionoptions =
 require("fidget").setup({})
 
 -- Markdown rendering
-require("render-markdown").setup({})
+-- !TODO check later, currently broken
+-- require("render-markdown").setup({})
