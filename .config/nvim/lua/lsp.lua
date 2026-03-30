@@ -23,34 +23,27 @@ vim.pack.add(
     { confirm = false }
 )
 
--- equivalent to :TSUpdate
-require("nvim-treesitter.install").update("all")
-require("nvim-treesitter.configs").setup({
-    sync_install = true,
+-- prerequisites: tree-sitter-cli
+require("nvim-treesitter").install({
+    "bash",
+    "html",
+    "json",
+    "python",
+    "regex",
+    "rust",
+    "yaml",
+    "lua",
+})
 
-    modules = {},
-    ignore_install = {},
-
-    ensure_installed = {
-        "bash",
-        "html",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "rust",
-        "python",
-        "query",
-        "regex",
-        "vim",
-        "yaml",
-    },
-
-    auto_install = true, -- autoinstall languages that are not installed yet
-
-    highlight = {
-        enable = true,
-    },
+-- Enable Neovim's built-in treesitter highlighting for any filetype that
+-- has a parser available (bundled or installed via nvim-treesitter).
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(ev)
+        local lang = vim.treesitter.language.get_lang(vim.bo[ev.buf].filetype)
+        if lang and vim.treesitter.language.add(lang) then
+            vim.treesitter.start(ev.buf, lang)
+        end
+    end,
 })
 
 -- INFO: completion engine
