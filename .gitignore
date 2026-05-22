@@ -5,6 +5,14 @@ nix/.direnv
 nix/package.json
 nix/package-lock.json
 
+# Ignore everything in .pi
+.pi/**
+
+# Allow only the specific shared config files
+!.pi/agent/
+!.pi/agent/mcp.json
+!.pi/agent/settings.json
+
 .DS_Store
 raycast
 qBittorrent
@@ -13,3 +21,4 @@ rstudio
 slicer.org
 .config/zed
 assets/
+target/

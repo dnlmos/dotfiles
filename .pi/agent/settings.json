@@ -1,0 +1,16 @@
+{
+  "lastChangelogVersion": "0.75.4",
+  "defaultProvider": "github-copilot",
+  "defaultModel": "claude-sonnet-4.6",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:context-mode",
+    "npm:pi-extmgr",
+    "npm:permission-gate",
+    "npm:pi-agent-extensions",
+    "npm:pi-subagents",
+    "npm:pi-web-access",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:pi-simplify"
+  ]
+}
