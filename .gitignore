@@ -1,3 +1,10 @@
+# Nix
+nix/result
+nix/result-*
+nix/.direnv
+nix/package.json
+nix/package-lock.json
+
 .DS_Store
 raycast
 qBittorrent
