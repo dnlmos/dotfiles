@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- INFO: completion engine
+vim.pack.add({ 'https://github.com/saghen/blink.lib' }) -- v2 requirement
 vim.pack.add({ "https://github.com/saghen/blink.cmp" }, { confirm = false })
 
 require("blink.cmp").setup({
